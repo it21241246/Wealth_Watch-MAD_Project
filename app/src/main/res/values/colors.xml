@@ -12,5 +12,9 @@
     <color name="Heading_Blue">#0583F2</color>
     <color name="btn_blue">#0583F2</color>
     <color name="input_blue">#0583F2</color>
+    <color name="background_blue">#0583F2</color>
+    <color name="btn_Green">#03A66A</color>
+    <color name="background_green">#03A66A</color>
+    <color name="light_green">#7ED957</color>
 
 </resources>
