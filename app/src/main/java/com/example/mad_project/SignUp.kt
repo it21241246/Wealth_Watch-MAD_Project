@@ -56,7 +56,7 @@ class SignUp : AppCompatActivity() {
 
                                 val intent = Intent(this, Login::class.java)
                                 startActivity(intent)
-                                
+
                             }.addOnFailureListener {
                                 Toast.makeText(this, "Failed!", Toast.LENGTH_SHORT).show()
                             }
