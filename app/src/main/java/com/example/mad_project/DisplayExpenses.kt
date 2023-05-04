@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.mad_project.R
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.QuerySnapshot
 
@@ -26,12 +27,16 @@ class DisplayExpenses : AppCompatActivity() {
             adapter = expensesAdapter
         }
 
-        loadExpenses()
+        val userId = FirebaseAuth.getInstance().currentUser?.uid
+        if (userId != null) {
+            loadExpenses(userId)
+        }
     }
 
-    private fun loadExpenses() {
+    private fun loadExpenses(userId: String) {
         FirebaseFirestore.getInstance()
             .collection("expenses")
+            .whereEqualTo("userid", userId)
             .get()
             .addOnSuccessListener { queryDocumentSnapshots: QuerySnapshot ->
                 val dsList = queryDocumentSnapshots.documents
@@ -42,6 +47,11 @@ class DisplayExpenses : AppCompatActivity() {
                 }
                 expensesAdapter.setExpenses(expensesList)
             }
+
     }
+
+
+
+
 }
 

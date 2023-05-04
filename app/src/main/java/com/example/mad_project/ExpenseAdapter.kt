@@ -85,7 +85,7 @@ class ExpensesAdapter(private val context: Context) : RecyclerView.Adapter<Expen
         holder.editButton.setOnClickListener {
             val expense = expensesList[holder.adapterPosition]
             val builder = AlertDialog.Builder(holder.itemView.context)
-            builder.setTitle("Edit User Details")
+//            builder.setTitle("Edit User Details")
 
             // Create the layout for the dialog
             val view = LayoutInflater.from(holder.itemView.context).inflate(R.layout.update_popup, null)
