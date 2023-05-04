@@ -15,8 +15,11 @@
     <color name="background_blue">#0583F2</color>
     <color name="btn_Green">#03A66A</color>
     <color name="background_green">#03A66A</color>
-    <color name="light_green">#7ED957</color>
+    <color name="cyan">#7ED957</color>
     <color name="buttonblue">#0585F2</color>
+    <color name="sharp_red">#c83034</color>
+    <color name="light_red">#e33d41</color>
+    <color name="light_green">#18c988</color>
 
 
 </resources>

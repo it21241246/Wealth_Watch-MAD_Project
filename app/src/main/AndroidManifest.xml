@@ -11,51 +11,42 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MADProject"
         tools:targetApi="31">
-
+        <activity
+            android:name=".ChangePassword"
+            android:exported="false" />
+        <activity
+            android:name=".Privacy"
+            android:exported="false" />
         <activity
             android:name=".EditDetails"
             android:exported="false" />
-
         <activity
             android:name=".ViewDetails"
             android:exported="false" />
-
         <activity
             android:name=".deleteAccount"
             android:exported="false" />
-
         <activity
             android:name=".profile"
             android:exported="false" />
-
         <activity
             android:name=".SignUp"
             android:exported="false" />
-
         <activity
             android:name=".AddExpensesActivity"
             android:exported="false" />
-
-
-
         <activity
             android:name=".DisplayExpenses"
             android:exported="false" />
-
         <activity
             android:name=".MainActivity"
-            android:exported="false"/>
-
+            android:exported="false" />
         <activity
             android:name=".AddIncomesActivity"
             android:exported="false" />
         <activity
             android:name=".DisplayIncome"
             android:exported="false" />
-
-
-
-
         <activity
             android:name=".Login"
             android:exported="true">
@@ -66,6 +57,9 @@
             </intent-filter>
         </activity>
 
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>

@@ -41,16 +41,17 @@ class profile : AppCompatActivity() {
             )
         }
 
-        binding.deleteButton.setOnClickListener {
-            startActivity(
-                Intent(this, deleteAccount::class.java)
-            )
-        }
-
         binding.LogOutButton.setOnClickListener {
             firebaseAuth.signOut()
             startActivity(
                 Intent(this, Login::class.java)
+            )
+        }
+
+        binding.privacyButton.setOnClickListener {
+            firebaseAuth.signOut()
+            startActivity(
+                Intent(this, Privacy::class.java)
             )
         }
 

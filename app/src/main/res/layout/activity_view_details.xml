@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/profile"
+    android:background="@drawable/dtl"
     tools:context=".ViewDetails">
 
     <ImageView
@@ -25,6 +25,7 @@
         android:layout_height="28dp"
         android:layout_marginTop="36dp"
         android:layout_marginEnd="36dp"
+        android:fontFamily="@font/poppins_medium"
         android:text="Muditha Pradeeptha"
         android:textColor="#FFFFFF"
         android:textSize="20sp"
@@ -38,6 +39,7 @@
         android:layout_height="21dp"
         android:layout_marginEnd="32dp"
         android:layout_marginBottom="176dp"
+        android:fontFamily="@font/poppins_medium"
         android:text="mudithapradeeptha@gmail.com"
         android:textColor="#FFFFFF"
         android:textSize="15sp"
@@ -166,6 +168,7 @@
         android:layout_marginHorizontal="16dp"
         android:layout_marginTop="28dp"
         android:background="@drawable/btn_bg"
+        android:fontFamily="@font/poppins_medium"
         android:text="Edit Details"
         android:textColor="@color/white"
         android:textStyle="bold"
