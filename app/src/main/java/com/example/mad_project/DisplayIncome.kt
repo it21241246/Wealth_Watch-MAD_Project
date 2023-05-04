@@ -6,6 +6,7 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.QuerySnapshot
 
@@ -24,22 +25,27 @@ class DisplayIncome : AppCompatActivity() {
             adapter = IncomeAdapter
         }
 
-        loadIncome()
+        val userId = FirebaseAuth.getInstance().currentUser?.uid
+        if (userId != null) {
+            loadExpenses(userId)
+        }
     }
 
-    private fun loadIncome() {
+    private fun loadExpenses(userId: String) {
         FirebaseFirestore.getInstance()
             .collection("incomes")
+            .whereEqualTo("userid", userId)
             .get()
             .addOnSuccessListener { queryDocumentSnapshots: QuerySnapshot ->
                 val dsList = queryDocumentSnapshots.documents
                 val incomeList = mutableListOf<Income>()
                 for (ds in dsList) {
-                    val expenses = ds.toObject(Income::class.java)
-                    expenses?.let { incomeList.add(it) }
+                    val incomes = ds.toObject(Income::class.java)
+                    incomes?.let { incomeList.add(it) }
                 }
                 IncomeAdapter.setIncome(incomeList)
             }
+
     }
 }
 
