@@ -7,8 +7,10 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.google.firebase.auth.FirebaseAuth
 import com.example.mad_project.R
 import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.ktx.firestore
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -20,12 +22,20 @@ class AddExpensesActivity : AppCompatActivity() {
     private lateinit var timeEditText: EditText
     private lateinit var saveExpenseButton: Button
 
+
+
+
+
+
     private val db = FirebaseFirestore.getInstance()
     val expensesRef = db.collection("expenses")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_expenses)
+
+        var firebaseAuth: FirebaseAuth = FirebaseAuth.getInstance()
+
 
         expenseNameEditText = findViewById(R.id.expenseNameInput)
         expenseAmountEditText = findViewById(R.id.expenseAmountInput)
@@ -81,6 +91,7 @@ class AddExpensesActivity : AppCompatActivity() {
             val expenseName = expenseNameEditText.text.toString().trim()
             val expenseAmount = expenseAmountEditText.text.toString().toDouble()
             val date = calendar.time
+            val userId = FirebaseAuth.getInstance().currentUser?.uid
 
             // Create a new expense document in the 'expenses' collection with a unique ID
             val expensesCollectionRef = db.collection("expenses")
@@ -89,6 +100,7 @@ class AddExpensesActivity : AppCompatActivity() {
 
             // Create a new expense document with the data and date, including the documentation data
             val expense = hashMapOf(
+                "userid" to userId,
                 "id" to newExpenseId,
                 "name" to expenseName,
                 "amount" to expenseAmount,

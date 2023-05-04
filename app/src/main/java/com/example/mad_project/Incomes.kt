@@ -4,9 +4,9 @@ import com.google.firebase.Timestamp
 import java.text.SimpleDateFormat
 import java.util.*
 
-class Income(var name: String, var amount: Double, var date: Timestamp? = null, var id: String? = "") {
+class Income(var name: String, var amount: Double, var date: Timestamp? = null, var id: String? = "",var userid: String?) {
 
-    constructor() : this("", 0.0, null, null)
+    constructor() : this("", 0.0, null, null,null)
 
     fun getDateString(): String {
         if (date == null) {

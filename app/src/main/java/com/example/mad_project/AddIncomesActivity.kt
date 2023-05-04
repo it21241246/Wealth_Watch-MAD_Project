@@ -7,6 +7,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import java.text.SimpleDateFormat
 import java.util.*
@@ -80,9 +81,11 @@ class AddIncomesActivity : AppCompatActivity() {
             val incomesCollectionRef = db.collection("incomes")
             val IncomeDocRef = incomesCollectionRef.document()
             val IncomeId = IncomeDocRef.id
+            val userId = FirebaseAuth.getInstance().currentUser?.uid
 
             // Create a new income document with the data and date
             val income = hashMapOf(
+                "userid" to userId,
                 "id" to IncomeId,
                 "name" to incomeName,
                 "amount" to incomeAmount,

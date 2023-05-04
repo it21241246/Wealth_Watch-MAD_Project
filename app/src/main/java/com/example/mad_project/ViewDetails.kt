@@ -43,7 +43,7 @@ class ViewDetails : AppCompatActivity() {
 
         binding.EditButton.setOnClickListener {
             startActivity(
-                Intent(this, profile::class.java)
+                Intent(this, EditDetails::class.java)
             )
         }
 
