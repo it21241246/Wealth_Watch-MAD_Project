@@ -44,6 +44,7 @@ class SignUp : AppCompatActivity() {
                         if (task.isSuccessful) {
                             val userID = FirebaseAuth.getInstance().currentUser!!.uid
                             val userMap = hashMapOf(
+                                "User_ID" to userID,
                                 "name" to name,
                                 "phone" to phone,
                                 "email" to email,
@@ -54,7 +55,7 @@ class SignUp : AppCompatActivity() {
                             db.collection("users").document(userID).set(userMap).addOnSuccessListener {
                                 Toast.makeText(this, "Successfully Added!", Toast.LENGTH_SHORT).show()
 
-                                val intent = Intent(this, Login::class.java)
+                                val intent = Intent(this, profile::class.java)
                                 startActivity(intent)
 
                             }.addOnFailureListener {
