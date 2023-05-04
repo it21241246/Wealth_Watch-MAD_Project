@@ -55,7 +55,7 @@ class SignUp : AppCompatActivity() {
                             db.collection("users").document(userID).set(userMap).addOnSuccessListener {
                                 Toast.makeText(this, "Successfully Added!", Toast.LENGTH_SHORT).show()
 
-                                val intent = Intent(this, profile::class.java)
+                                val intent = Intent(this, MainActivity::class.java)
                                 startActivity(intent)
 
                             }.addOnFailureListener {
