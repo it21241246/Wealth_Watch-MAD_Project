@@ -5,4 +5,25 @@
     <string name="RegisterHeading01">Create new</string>
     <string name="RegisterHeading02">Account</string>
 
+<!--   expenses string values-->
+    <string name="NameExp">Name</string>
+    <string name="amount">Amount</string>
+    <string name="date">Date</string>
+    <string name="delete">Delete</string>
+    <string name="edit">Edit</string>
+    <string name="update_expense">Update Expense</string>
+    <string name="description">Description</string>
+    <string name="amountUpdateExp">Amount</string>
+    <string name="date_and_time">Date and time</string>
+    <string name="updateExpButton">Update</string>
+
+
+<!--    income string values-->
+    <string name="name">Name</string>
+    <string name="dateincome">Date</string>
+    <string name="amountincome">Amount</string>
+    <string name="deleteincome">Delete</string>
+    <string name="editincome">Edit</string>
+
+
 </resources>

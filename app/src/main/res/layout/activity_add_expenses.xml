@@ -1,73 +1,113 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/expensebg"
     tools:context=".AddExpensesActivity">
 
     <TextView
         android:id="@+id/addExpenseTitle"
-        android:layout_width="wrap_content"
+        android:layout_width="286dp"
         android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="65dp"
+        android:layout_marginTop="68dp"
+        android:layout_marginEnd="60dp"
+        android:layout_marginBottom="593dp"
+        android:fontFamily="@font/poppins_bold"
         android:text="Add Expense"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="16dp" />
+        android:textColor="@color/buttonblue"
+        android:textSize="40dp"
+        android:textStyle="bold" />
 
     <EditText
         android:id="@+id/expenseNameInput"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="168dp"
+        android:layout_marginEnd="34dp"
+        android:layout_marginBottom="512dp"
+        android:fontFamily="@font/poppins_medium"
         android:hint="Expense Name"
         android:inputType="text"
-        android:layout_marginStart="32dp"
-        android:layout_marginEnd="32dp"
-        android:layout_below="@id/addExpenseTitle"
-        android:layout_marginTop="16dp"/>
+        android:textColorHint="#0583F2" />
 
     <EditText
         android:id="@+id/expenseAmountInput"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="246dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="434dp"
+        android:fontFamily="@font/poppins_medium"
         android:hint="Expense Amount"
         android:inputType="numberDecimal"
-        android:layout_marginStart="32dp"
-        android:layout_marginEnd="32dp"
-        android:layout_below="@id/expenseNameInput"
-        android:layout_marginTop="16dp"/>
+        android:textColorHint="#0583F2" />
 
     <EditText
         android:id="@+id/expenseDateInput"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="326dp"
+        android:layout_marginEnd="29dp"
+        android:layout_marginBottom="354dp"
+        android:editable="true"
+        android:fontFamily="@font/poppins_medium"
         android:hint="Expense Date"
         android:inputType="none"
-        android:editable="true"
-        android:layout_marginStart="32dp"
-        android:layout_marginEnd="32dp"
-        android:layout_below="@id/expenseAmountInput"
-        android:layout_marginTop="16dp"/>
+        android:textColorHint="#0583F2" />
 
     <EditText
         android:id="@+id/expenseTimeInput"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="39dp"
+        android:layout_marginTop="402dp"
+        android:layout_marginEnd="25dp"
+        android:layout_marginBottom="278dp"
+        android:editable="true"
+        android:fontFamily="@font/poppins_medium"
         android:hint="Expense Time"
         android:inputType="none"
-        android:editable="true"
-        android:layout_marginStart="32dp"
-        android:layout_marginEnd="32dp"
-        android:layout_below="@id/expenseDateInput"
-        android:layout_marginTop="16dp"/>
+        android:textColorHint="#0583F2" />
 
     <Button
         android:id="@+id/saveExpenseButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/expenseTimeInput"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="16dp"
-        android:text="Save Expense" />
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="527dp"
+        android:layout_marginEnd="150dp"
+        android:layout_marginBottom="156dp"
+        android:backgroundTint="#0583F2"
+        android:text="Save Expense"
+        android:textStyle="bold"
+        app:cornerRadius="70dp" />
 
 </RelativeLayout>

@@ -8,10 +8,11 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:text="Update Income"
-        android:background="@color/teal_700"
+        android:textColor="@color/buttonblue"
+        android:fontFamily="@font/poppins_bold"
         android:textSize="25dp"
         android:gravity="center"
-        android:textColor="#FFF"/>
+        />
 
     <TextView
         android:layout_width="match_parent"
