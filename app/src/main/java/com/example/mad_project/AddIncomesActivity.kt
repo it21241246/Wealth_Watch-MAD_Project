@@ -8,40 +8,29 @@ import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
-import com.example.mad_project.R
 import com.google.firebase.firestore.FirebaseFirestore
-import com.google.firebase.firestore.ktx.firestore
 import java.text.SimpleDateFormat
 import java.util.*
 
-class AddExpensesActivity : AppCompatActivity() {
+class AddIncomesActivity : AppCompatActivity() {
 
-    private lateinit var expenseNameEditText: EditText
-    private lateinit var expenseAmountEditText: EditText
+    private lateinit var incomeNameEditText: EditText
+    private lateinit var incomeAmountEditText: EditText
     private lateinit var dateEditText: EditText
     private lateinit var timeEditText: EditText
-    private lateinit var saveExpenseButton: Button
-
-
-
-
-
+    private lateinit var saveIncomeButton: Button
 
     private val db = FirebaseFirestore.getInstance()
-    val expensesRef = db.collection("expenses")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_add_expenses)
+        setContentView(R.layout.activity_add_incomes)
 
-        var firebaseAuth: FirebaseAuth = FirebaseAuth.getInstance()
-
-
-        expenseNameEditText = findViewById(R.id.expenseNameInput)
-        expenseAmountEditText = findViewById(R.id.expenseAmountInput)
-        dateEditText = findViewById(R.id.expenseDateInput)
-        timeEditText = findViewById(R.id.expenseTimeInput)
-        saveExpenseButton = findViewById(R.id.saveExpenseButton)
+        incomeNameEditText = findViewById(R.id.incomeNameInput)
+        incomeAmountEditText = findViewById(R.id.incomeAmountInput)
+        dateEditText = findViewById(R.id.incomeDateInput)
+        timeEditText = findViewById(R.id.incomeTimeInput)
+        saveIncomeButton = findViewById(R.id.saveIncomeButton)
 
         // Get the current date and time
         val calendar = Calendar.getInstance()
@@ -55,8 +44,7 @@ class AddExpensesActivity : AppCompatActivity() {
             val year = calendar.get(Calendar.YEAR)
             val month = calendar.get(Calendar.MONTH)
             val dayOfMonth = calendar.get(Calendar.DAY_OF_MONTH)
-            val datePickerDialog = DatePickerDialog(
-                this,
+            val datePickerDialog = DatePickerDialog(this,
                 { _, selectedYear, selectedMonth, selectedDayOfMonth ->
                     calendar.set(selectedYear, selectedMonth, selectedDayOfMonth)
                     dateEditText.setText(dateFormat.format(calendar.time))
@@ -71,8 +59,7 @@ class AddExpensesActivity : AppCompatActivity() {
         timeEditText.setOnClickListener {
             val hour = calendar.get(Calendar.HOUR_OF_DAY)
             val minute = calendar.get(Calendar.MINUTE)
-            val timePickerDialog = TimePickerDialog(
-                this,
+            val timePickerDialog = TimePickerDialog(this,
                 { _, selectedHour, selectedMinute ->
                     calendar.set(Calendar.HOUR_OF_DAY, selectedHour)
                     calendar.set(Calendar.MINUTE, selectedMinute)
@@ -85,31 +72,28 @@ class AddExpensesActivity : AppCompatActivity() {
             timePickerDialog.show()
         }
 
-
-
-        saveExpenseButton.setOnClickListener {
-            val expenseName = expenseNameEditText.text.toString().trim()
-            val expenseAmount = expenseAmountEditText.text.toString().toDouble()
+        saveIncomeButton.setOnClickListener {
+            val incomeName = incomeNameEditText.text.toString().trim()
+            val incomeAmount = incomeAmountEditText.text.toString().toDouble()
             val date = calendar.time
+
+
+            val incomesCollectionRef = db.collection("incomes")
+            val IncomeDocRef = incomesCollectionRef.document()
+            val IncomeId = IncomeDocRef.id
             val userId = FirebaseAuth.getInstance().currentUser?.uid
 
-            // Create a new expense document in the 'expenses' collection with a unique ID
-            val expensesCollectionRef = db.collection("expenses")
-            val newExpenseDocRef = expensesCollectionRef.document()
-            val newExpenseId = newExpenseDocRef.id
-
-            // Create a new expense document with the data and date, including the documentation data
-            val expense = hashMapOf(
+            // Create a new income document with the data and date
+            val income = hashMapOf(
                 "userid" to userId,
-                "id" to newExpenseId,
-                "name" to expenseName,
-                "amount" to expenseAmount,
-                "date" to date,
-                // Add any additional documentation data here
+                "id" to IncomeId,
+                "name" to incomeName,
+                "amount" to incomeAmount,
+                "date" to date
             )
 
-            // Add the expense to the 'expenses' collection in Firestore
-            newExpenseDocRef.set(expense)
+            // Add the income to the 'incomes' collection in Firestore
+            IncomeDocRef.set(income)
                 .addOnSuccessListener {
                     // Show a success message and finish the activity
                     Toast.makeText(this, "Expense added successfully", Toast.LENGTH_SHORT).show()

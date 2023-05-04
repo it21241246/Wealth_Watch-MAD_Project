@@ -17,9 +17,20 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val viewexpenses: Button = findViewById(R.id.dashboardButton)
+        val viewexpenses: Button = findViewById(R.id.viewExpenses)
         viewexpenses.setOnClickListener {
             val intent = Intent(this, DisplayExpenses::class.java)
+            startActivity(intent)
+        }
+        val viewincomes: Button = findViewById(R.id.viewIncomes)
+        viewincomes.setOnClickListener {
+            val intent = Intent(this, DisplayIncome::class.java)
+            startActivity(intent)
+        }
+
+        val addIncomeButton: Button = findViewById(R.id.addIncomeButton)
+        addIncomeButton.setOnClickListener {
+            val intent = Intent(this, AddIncomesActivity::class.java)
             startActivity(intent)
         }
 
@@ -36,5 +47,5 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, profile::class.java)
             startActivity(intent)
         }
-   }
+    }
 }
