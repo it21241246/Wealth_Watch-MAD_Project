@@ -9,18 +9,18 @@
 
     <Button
 
-        android:id="@+id/dashboardButton"
+        android:id="@+id/viewExpenses"
         android:layout_width="259dp"
         android:layout_height="53dp"
         android:layout_centerHorizontal="true"
         android:background="@drawable/rounded"
         android:gravity="center"
+        android:text="View Expenses"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:text="View Expenses"
-        app:layout_constraintVertical_bias="0.532">
+        app:layout_constraintVertical_bias="0.235">
 
     </Button>
 
@@ -32,12 +32,46 @@
         android:layout_centerHorizontal="true"
         android:background="@drawable/rounded"
         android:gravity="center"
+        android:text="Add Expenses"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:text="Add Expenses"
-        app:layout_constraintVertical_bias="0.668">
+        app:layout_constraintVertical_bias="0.377">
+
+    </Button>
+
+    <Button
+
+        android:id="@+id/addIncomeButton"
+        android:layout_width="259dp"
+        android:layout_height="53dp"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/rounded"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:text="Add Incomes"
+        app:layout_constraintVertical_bias="0.787">
+
+    </Button>
+
+    <Button
+
+        android:id="@+id/viewIncomes"
+        android:layout_width="259dp"
+        android:layout_height="53dp"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/rounded"
+        android:gravity="center"
+        android:text="View Incomes"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.662">
 
     </Button>
 
@@ -49,12 +83,12 @@
         android:layout_centerHorizontal="true"
         android:background="@drawable/rounded"
         android:gravity="center"
+        android:text="User Profile"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:text="User Profile"
-        app:layout_constraintVertical_bias="0.787">
+        app:layout_constraintVertical_bias="0.532">
 
     </Button>
 
