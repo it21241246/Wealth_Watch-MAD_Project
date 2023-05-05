@@ -38,7 +38,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView6"
-        app:layout_constraintVertical_bias="0.043" />
+        app:layout_constraintVertical_bias="0.134" />
 
     <EditText
         android:id="@+id/textname"
@@ -50,7 +50,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView7"
-        app:layout_constraintVertical_bias="0.032">
+        app:layout_constraintVertical_bias="0.031">
 
     </EditText>
 
@@ -69,7 +69,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textname"
-        app:layout_constraintVertical_bias="0.059" />
+        app:layout_constraintVertical_bias="0.139" />
 
     <EditText
         android:id="@+id/textamount"
@@ -81,38 +81,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView9"
-        app:layout_constraintVertical_bias="0.054">
-
-    </EditText>
-
-    <TextView
-        android:id="@+id/textView8"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/poppins_medium"
-        android:gravity="center"
-        android:text="@string/date_and_time_income"
-        android:textColor="#0583F2"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textamount"
-        app:layout_constraintVertical_bias="0.076" />
-
-    <EditText
-        android:id="@+id/txtdt"
-        android:layout_width="393dp"
-        android:layout_height="54dp"
-        android:background="@drawable/edit_text_modify"
-        android:gravity="center"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView8"
-        app:layout_constraintVertical_bias="0.076">
+        app:layout_constraintVertical_bias="0.074">
 
     </EditText>
 
