@@ -2,13 +2,16 @@ package com.example.mad_project
 
 import android.app.DatePickerDialog
 import android.app.TimePickerDialog
+import android.content.Intent
 import android.os.Bundle
+import android.view.MenuItem
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.example.mad_project.R
+import com.google.android.material.navigation.NavigationBarView
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ktx.firestore
 import java.text.SimpleDateFormat
@@ -120,6 +123,40 @@ class AddExpensesActivity : AppCompatActivity() {
                     Toast.makeText(this, "Error adding expense: ${e.message}", Toast.LENGTH_SHORT).show()
                 }
         }
+
+        val nav: NavigationBarView = findViewById(R.id.navbar)
+
+        nav.setOnItemSelectedListener(object : NavigationBarView.OnItemSelectedListener {
+
+            override fun onNavigationItemSelected(item: MenuItem): Boolean {
+
+                when (item.itemId) {
+
+                    R.id.home -> {
+                        val intent = Intent(this@AddExpensesActivity, MainActivity::class.java)
+                        startActivity(intent)
+                    }
+
+                    R.id.goals -> {
+                        val intent = Intent(this@AddExpensesActivity, profile::class.java)
+                        startActivity(intent)
+                    }
+
+                    R.id.stats -> {
+                        val intent = Intent(this@AddExpensesActivity, ViewPage::class.java)
+                        startActivity(intent)
+                    }
+
+                    R.id.settings -> {
+                        val intent = Intent(this@AddExpensesActivity, profile::class.java)
+                        startActivity(intent)
+                    }
+
+                }
+
+                return true
+            }
+        })
 
     }
 }

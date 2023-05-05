@@ -5,18 +5,19 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/dashboardbg"
-    tools:context=".MainActivity">
+    tools:context=".ViewPage">
+
 
     <Button
 
-        android:id="@+id/addExpenseButton"
+        android:id="@+id/viewIncomes"
         android:layout_width="259dp"
         android:layout_height="53dp"
         android:layout_centerHorizontal="true"
         android:backgroundTint="#0583F2"
         android:fontFamily="@font/poppins_medium"
         android:gravity="center"
-        android:text="@string/add_expenses"
+        android:text="@string/view_income"
         android:textSize="18dp"
         android:textStyle="bold"
         app:cornerRadius="70dp"
@@ -24,20 +25,20 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.52">
+        app:layout_constraintVertical_bias="0.137">
 
     </Button>
 
     <Button
 
-        android:id="@+id/addIncomeButton"
+        android:id="@+id/viewExpenses"
         android:layout_width="259dp"
         android:layout_height="53dp"
         android:layout_centerHorizontal="true"
         android:backgroundTint="#0583F2"
         android:fontFamily="@font/poppins_medium"
         android:gravity="center"
-        android:text="@string/add_income"
+        android:text="@string/view_expenses"
         android:textSize="18dp"
         android:textStyle="bold"
         app:cornerRadius="70dp"
@@ -45,10 +46,9 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.383">
+        app:layout_constraintVertical_bias="0.337">
 
     </Button>
-
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:layout_width="403dp"
@@ -66,6 +66,5 @@
 
 
     </com.google.android.material.bottomnavigation.BottomNavigationView>
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

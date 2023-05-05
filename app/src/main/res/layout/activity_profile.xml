@@ -106,4 +106,21 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:layout_width="403dp"
+        android:layout_height="55dp"
+        android:id="@+id/navbar"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="4dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/menu"
+        app:itemTextColor="@drawable/sssss"
+        app:itemIconTint="@drawable/sssss"
+        tools:ignore="MissingConstraints">
+
+
+    </com.google.android.material.bottomnavigation.BottomNavigationView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

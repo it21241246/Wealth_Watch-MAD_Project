@@ -7,7 +7,7 @@
     <string name="user_profile">User Profile</string>
 
 
-<!--   expenses string values-->
+    <!--   expenses string values-->
     <string name="NameExp">Name</string>
     <string name="amount">Amount</string>
     <string name="date">Date</string>
@@ -22,7 +22,7 @@
     <string name="view_expenses">View Expenses</string>
 
 
-<!--    income string values-->
+    <!--    income string values-->
     <string name="name">Name</string>
     <string name="dateincome">Date</string>
     <string name="amountincome">Amount</string>
@@ -33,8 +33,10 @@
     <string name="date_and_time_income">Date and time</string>
     <string name="view_income">View Income</string>
     <string name="add_income">Add Income</string>
-
-
+    <string name="dasboard">Dasboard</string>
+    <string name="goals">Goals</string>
+    <string name="stats">Stats</string>
+    <string name="settings">Settings</string>
 
 
 </resources>

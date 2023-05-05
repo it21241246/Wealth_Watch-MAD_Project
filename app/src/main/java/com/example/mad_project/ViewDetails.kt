@@ -3,10 +3,12 @@ package com.example.mad_project
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.MenuItem
 import android.widget.TextView
 import android.widget.Toast
 import com.example.mad_project.databinding.ActivityProfileBinding
 import com.example.mad_project.databinding.ActivityViewDetailsBinding
+import com.google.android.material.navigation.NavigationBarView
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
@@ -76,5 +78,38 @@ class ViewDetails : AppCompatActivity() {
             .addOnFailureListener { exception ->
                 Toast.makeText(this, "Failed", Toast.LENGTH_SHORT).show()
             }
+        val nav: NavigationBarView = findViewById(R.id.navbar)
+
+        nav.setOnItemSelectedListener(object : NavigationBarView.OnItemSelectedListener {
+
+            override fun onNavigationItemSelected(item: MenuItem): Boolean {
+
+                when (item.itemId) {
+
+                    R.id.home -> {
+                        val intent = Intent(this@ViewDetails, MainActivity::class.java)
+                        startActivity(intent)
+                    }
+
+                    R.id.goals -> {
+                        val intent = Intent(this@ViewDetails, profile::class.java)
+                        startActivity(intent)
+                    }
+
+                    R.id.stats -> {
+                        val intent = Intent(this@ViewDetails, ViewPage::class.java)
+                        startActivity(intent)
+                    }
+
+                    R.id.settings -> {
+                        val intent = Intent(this@ViewDetails, profile::class.java)
+                        startActivity(intent)
+                    }
+
+                }
+
+                return true
+            }
+        })
     }
 }

@@ -82,5 +82,7 @@
         app:layout_constraintStart_toEndOf="@+id/date"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.971" />
+    
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

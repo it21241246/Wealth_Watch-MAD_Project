@@ -4,30 +4,25 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
-import com.example.mad_project.databinding.ActivityPrivacyBinding
-import com.example.mad_project.databinding.ActivityProfileBinding
+import android.widget.Button
 import com.google.android.material.navigation.NavigationBarView
 
-class Privacy : AppCompatActivity() {
-
-    private lateinit var binding : ActivityPrivacyBinding
-
+class ViewPage : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityPrivacyBinding.inflate(layoutInflater)
-        setContentView(binding.root)
+        setContentView(R.layout.activity_view_page)
 
-        binding.deleteButton.setOnClickListener {
-            startActivity(
-                Intent(this, deleteAccount::class.java)
-            )
+        val viewexpenses: Button = findViewById(R.id.viewExpenses)
+        viewexpenses.setOnClickListener {
+            val intent = Intent(this, DisplayExpenses::class.java)
+            startActivity(intent)
+        }
+        val viewincomes: Button = findViewById(R.id.viewIncomes)
+        viewincomes.setOnClickListener {
+            val intent = Intent(this, DisplayIncome::class.java)
+            startActivity(intent)
         }
 
-        binding.changePassword.setOnClickListener {
-            startActivity(
-                Intent(this, ChangePassword::class.java)
-            )
-        }
         val nav: NavigationBarView = findViewById(R.id.navbar)
 
         nav.setOnItemSelectedListener(object : NavigationBarView.OnItemSelectedListener {
@@ -37,22 +32,22 @@ class Privacy : AppCompatActivity() {
                 when (item.itemId) {
 
                     R.id.home -> {
-                        val intent = Intent(this@Privacy, MainActivity::class.java)
+                        val intent = Intent(this@ViewPage, MainActivity::class.java)
                         startActivity(intent)
                     }
 
                     R.id.goals -> {
-                        val intent = Intent(this@Privacy, profile::class.java)
+                        val intent = Intent(this@ViewPage, profile::class.java)
                         startActivity(intent)
                     }
 
                     R.id.stats -> {
-                        val intent = Intent(this@Privacy, ViewPage::class.java)
+                        val intent = Intent(this@ViewPage, ViewPage::class.java)
                         startActivity(intent)
                     }
 
                     R.id.settings -> {
-                        val intent = Intent(this@Privacy, profile::class.java)
+                        val intent = Intent(this@ViewPage, profile::class.java)
                         startActivity(intent)
                     }
 

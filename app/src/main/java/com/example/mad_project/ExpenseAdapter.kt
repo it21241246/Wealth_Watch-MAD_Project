@@ -142,7 +142,7 @@ class ExpensesAdapter(private val context: Context) : RecyclerView.Adapter<Expen
             val dialog = builder.create()
             dialog.show()
         }
-}
+    }
 
 
     override fun getItemCount(): Int {
