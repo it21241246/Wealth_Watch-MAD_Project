@@ -64,6 +64,21 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/Dashboardbtn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:background="@drawable/btn_bg"
+        android:text="Dasboard"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.402" />
+
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/EditButton"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -89,56 +104,6 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btn01"
-        android:layout_width="110dp"
-        android:layout_height="93dp"
-        android:layout_marginHorizontal="16dp"
-        android:layout_marginBottom="112dp"
-        android:background="@drawable/rec_bg_mu"
-        android:backgroundTint="#0583F2"
-        android:elevation="100dp"
-        android:text="btn01"
-        android:textColor="@color/white"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/ViewButton"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.053"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btn02"
-        android:layout_width="110dp"
-        android:layout_height="93dp"
-        android:layout_marginHorizontal="16dp"
-        android:layout_marginBottom="112dp"
-        android:background="@drawable/rec_bg_mu"
-        android:backgroundTint="#0583F2"
-        android:elevation="100dp"
-        android:text="btn02"
-        android:textColor="@color/white"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/ViewButton"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btn03"
-        android:layout_width="110dp"
-        android:layout_height="93dp"
-        android:layout_marginHorizontal="16dp"
-        android:layout_marginBottom="112dp"
-        android:background="@drawable/rec_bg_mu"
-        android:backgroundTint="#0583F2"
-        android:elevation="100dp"
-        android:text="btn03"
-        android:textColor="@color/white"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/ViewButton"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.946"
         app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

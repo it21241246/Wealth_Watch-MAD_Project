@@ -29,6 +29,12 @@ class profile : AppCompatActivity() {
         showName = findViewById(R.id.UserNameHeading)
         showEmail = findViewById(R.id.UserEmailHeading)
 
+        binding.Dashboardbtn.setOnClickListener {
+            startActivity(
+                Intent(this, MainActivity::class.java)
+            )
+        }
+
         binding.ViewButton.setOnClickListener {
             startActivity(
                 Intent(this, ViewDetails::class.java)
