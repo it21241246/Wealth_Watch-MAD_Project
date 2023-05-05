@@ -104,6 +104,7 @@ class ExpensesAdapter(private val context: Context) : RecyclerView.Adapter<Expen
                 val updatedAmount = updatedAmountStr.toDouble()
 
 
+
                 // Update the user's details in the database
                 val expenseId = expenses.id
                 val db = FirebaseFirestore.getInstance()
@@ -141,8 +142,7 @@ class ExpensesAdapter(private val context: Context) : RecyclerView.Adapter<Expen
             val dialog = builder.create()
             dialog.show()
         }
-
-    }
+}
 
 
     override fun getItemCount(): Int {
