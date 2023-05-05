@@ -96,7 +96,7 @@ class AddIncomesActivity : AppCompatActivity() {
             IncomeDocRef.set(income)
                 .addOnSuccessListener {
                     // Show a success message and finish the activity
-                    Toast.makeText(this, "Expense added successfully", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, "Income added successfully", Toast.LENGTH_SHORT).show()
                     finish()
                 }
                 .addOnFailureListener { e ->

@@ -117,7 +117,7 @@ class IncomeAdapter(private val context: Context) : RecyclerView.Adapter<IncomeA
                         ))
                         .addOnSuccessListener {
                             // Show a success message if the user's details are updated
-                            Toast.makeText(holder.itemView.context, "income details updated", Toast.LENGTH_SHORT).show()
+                            Toast.makeText(holder.itemView.context, "Income Details Updated", Toast.LENGTH_SHORT).show()
 
                             // Update the user's details in the local list and refresh the adapter
                             income.name = updatedName
