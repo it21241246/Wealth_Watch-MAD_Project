@@ -4,7 +4,6 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.mad_project.databinding.ActivityPrivacyBinding
-import com.example.mad_project.databinding.ActivityProfileBinding
 
 class Privacy : AppCompatActivity() {
 
