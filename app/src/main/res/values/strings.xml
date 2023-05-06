@@ -39,5 +39,10 @@
     <string name="settings">Settings</string>
     <string name="total_incomes_for_current_month">Total incomes for current month:</string>
 
+    <!--    goals stings -->
+    <string name="Create">Create a new goal</string>
+    <string name="view">view goals</string>
+    <string name="Analytics">Analytics</string>
+
 
 </resources>
