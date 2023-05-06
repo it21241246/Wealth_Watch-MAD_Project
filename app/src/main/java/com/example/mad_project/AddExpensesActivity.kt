@@ -138,7 +138,7 @@ class AddExpensesActivity : AppCompatActivity() {
                     }
 
                     R.id.goals -> {
-                        val intent = Intent(this@AddExpensesActivity, profile::class.java)
+                        val intent = Intent(this@AddExpensesActivity, HomePageActivity::class.java)
                         startActivity(intent)
                     }
 

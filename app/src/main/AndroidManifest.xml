@@ -17,6 +17,44 @@
             android:name="com.google.android.material.button.MaterialButton"
             android:label="Material Button"
             tools:ignore="Instantiatable" />
+
+        <!--    Goals manifest files -->
+
+        <activity
+            android:name=".EditGoalActivity"
+            android:exported="false"/>
+
+
+        <activity
+            android:name=".MainActivitygoal"
+            android:exported="false"/>
+
+
+        <activity
+            android:name=".HomePageActivity"
+            android:exported="false"/>
+
+
+        <activity
+            android:name=".CreateGoalActivity"
+            android:exported="false"/>
+
+
+
+        <activity
+            android:name=".AnalyticsActivity"
+            android:exported="false"/>
+
+
+        <activity
+            android:name=".CurrentGoalsActivity"
+            android:exported="false"/>
+
+
+
+        <!--    Goals manifest files -->
+
+
         <activity
             android:name=".ViewPage"
             android:exported="false" />

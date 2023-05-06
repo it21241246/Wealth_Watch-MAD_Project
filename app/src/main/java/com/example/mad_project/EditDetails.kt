@@ -204,7 +204,7 @@ class EditDetails : AppCompatActivity() {
                     }
 
                     R.id.goals -> {
-                        val intent = Intent(this@EditDetails, profile::class.java)
+                        val intent = Intent(this@EditDetails, HomePageActivity::class.java)
                         startActivity(intent)
                     }
 
