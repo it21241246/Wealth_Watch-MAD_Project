@@ -21,6 +21,7 @@
         <!--    Goals manifest files -->
 
         <activity
+
             android:name=".EditGoalActivity"
             android:exported="true">
             <intent-filter>
@@ -84,9 +85,7 @@
 
         <!--    Goals manifest files -->
 
-        <activity
-            android:name=".ViewPage"
-            android:exported="false" />
+
         <activity
             android:name=".ChangePassword"
             android:exported="false" />
