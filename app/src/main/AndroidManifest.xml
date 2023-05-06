@@ -21,7 +21,6 @@
         <!--    Goals manifest files -->
 
         <activity
-
             android:name=".EditGoalActivity"
             android:exported="true">
             <intent-filter>
