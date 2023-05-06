@@ -2,16 +2,18 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/home"
-            android:icon="@drawable/baseline_home_24"
+            android:icon="@drawable/baseline_add_circle_24"
             android:title="@string/dasboard" />
-        <item
-            android:id="@+id/goals"
-            android:icon="@drawable/baseline_military_tech_24"
-            android:title="@string/goals" />
+
         <item
             android:id="@+id/stats"
             android:icon="@drawable/baseline_stacked_bar_chart_24"
             android:title="@string/stats" />
+
+        <item
+            android:id="@+id/goals"
+            android:icon="@drawable/baseline_military_tech_24"
+            android:title="@string/goals" />
 
         <item
             android:id="@+id/settings"

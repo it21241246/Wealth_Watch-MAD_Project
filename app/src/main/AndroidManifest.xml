@@ -11,6 +11,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MADProject"
         tools:targetApi="31">
+
+
+        <activity
+            android:name="com.google.android.material.button.MaterialButton"
+            android:label="Material Button"
+            tools:ignore="Instantiatable" />
+        <activity
+            android:name=".summary"
+            android:exported="false" />
         <activity
             android:name=".ViewPage"
             android:exported="false" />
