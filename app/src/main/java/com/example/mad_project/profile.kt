@@ -57,7 +57,6 @@ class profile : AppCompatActivity() {
         }
 
         binding.privacyButton.setOnClickListener {
-            firebaseAuth.signOut()
             startActivity(
                 Intent(this, Privacy::class.java)
             )

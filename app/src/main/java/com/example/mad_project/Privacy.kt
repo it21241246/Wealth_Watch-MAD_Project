@@ -5,8 +5,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
 import com.example.mad_project.databinding.ActivityPrivacyBinding
-import com.example.mad_project.databinding.ActivityProfileBinding
 import com.google.android.material.navigation.NavigationBarView
+
 
 class Privacy : AppCompatActivity() {
 

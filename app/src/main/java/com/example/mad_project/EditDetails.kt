@@ -45,6 +45,7 @@ class EditDetails : AppCompatActivity() {
                     val phone = document.getString("phone")
                     val password = document.getString("password")
 
+
                     updateName.setText(name)
                     updateEmail.setText(email)
                     updatePhone.setText(phone)
@@ -65,13 +66,16 @@ class EditDetails : AppCompatActivity() {
             val newPhone = updatePhone.text.toString().trim()
             val newPassword = updatePassword.text.toString().trim()
 
+
+
             if (newName.isEmpty() || newEmail.isEmpty() || newPhone.isEmpty() || newPassword.isEmpty()) {
                 Toast.makeText(this, "Please fill all the fields", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
 
             if (!isValidEmail(newEmail)) {
-                Toast.makeText(this, "Please enter a valid email address", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Please enter a valid email address", Toast.LENGTH_SHORT)
+                    .show()
                 return@setOnClickListener
             }
 
@@ -123,6 +127,7 @@ class EditDetails : AppCompatActivity() {
 //                }
 
             // update userEmail
+
             val user = auth.currentUser
             val credential = EmailAuthProvider.getCredential(user?.email!!, newPassword)
 
@@ -184,7 +189,6 @@ class EditDetails : AppCompatActivity() {
                 }
 
 
-
         }
         val nav: NavigationBarView = findViewById(R.id.navbar)
 
@@ -221,8 +225,8 @@ class EditDetails : AppCompatActivity() {
         })
 
 
-
     }
+
     private fun isValidEmail(email: String): Boolean {
         return !TextUtils.isEmpty(email) && Patterns.EMAIL_ADDRESS.matcher(email).matches()
     }
