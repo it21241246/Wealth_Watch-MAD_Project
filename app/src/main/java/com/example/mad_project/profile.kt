@@ -89,7 +89,7 @@ class profile : AppCompatActivity() {
                     }
 
                     R.id.goals -> {
-                        val intent = Intent(this@profile, profile::class.java)
+                        val intent = Intent(this@profile, HomePageActivity::class.java)
                         startActivity(intent)
                     }
 

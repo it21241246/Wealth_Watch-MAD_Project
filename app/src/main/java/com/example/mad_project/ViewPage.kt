@@ -55,7 +55,7 @@ class ViewPage : AppCompatActivity() {
                     }
 
                     R.id.goals -> {
-                        val intent = Intent(this@ViewPage, profile::class.java)
+                        val intent = Intent(this@ViewPage, HomePageActivity::class.java)
                         startActivity(intent)
                     }
 

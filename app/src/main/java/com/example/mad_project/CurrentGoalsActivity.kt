@@ -4,10 +4,12 @@ import android.content.Intent
 import android.graphics.drawable.GradientDrawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.MenuItem
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.ListView
+import com.google.android.material.navigation.NavigationBarView
 import com.google.firebase.firestore.FirebaseFirestore
 
 class CurrentGoalsActivity : AppCompatActivity() {
@@ -54,5 +56,39 @@ class CurrentGoalsActivity : AppCompatActivity() {
             .addOnFailureListener { exception ->
                 // Handle errors
             }
+
+        val nav: NavigationBarView = findViewById(R.id.navbar)
+
+        nav.setOnItemSelectedListener(object : NavigationBarView.OnItemSelectedListener {
+
+            override fun onNavigationItemSelected(item: MenuItem): Boolean {
+
+                when (item.itemId) {
+
+                    R.id.home -> {
+                        val intent = Intent(this@CurrentGoalsActivity, MainActivity::class.java)
+                        startActivity(intent)
+                    }
+
+                    R.id.goals -> {
+                        val intent = Intent(this@CurrentGoalsActivity, HomePageActivity::class.java)
+                        startActivity(intent)
+                    }
+
+                    R.id.stats -> {
+                        val intent = Intent(this@CurrentGoalsActivity, ViewPage::class.java)
+                        startActivity(intent)
+                    }
+
+                    R.id.settings -> {
+                        val intent = Intent(this@CurrentGoalsActivity, profile::class.java)
+                        startActivity(intent)
+                    }
+
+                }
+
+                return true
+            }
+        })
     }
 }

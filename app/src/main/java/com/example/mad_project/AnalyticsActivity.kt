@@ -1,7 +1,9 @@
 package com.example.mad_project
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.MenuItem
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Spinner
@@ -9,6 +11,7 @@ import android.widget.TextView
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ktx.toObject
 import android.view.View
+import com.google.android.material.navigation.NavigationBarView
 
 
 class AnalyticsActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
@@ -20,6 +23,40 @@ class AnalyticsActivity : AppCompatActivity(), AdapterView.OnItemSelectedListene
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_analytics)
+
+        val nav: NavigationBarView = findViewById(R.id.navbar)
+
+        nav.setOnItemSelectedListener(object : NavigationBarView.OnItemSelectedListener {
+
+            override fun onNavigationItemSelected(item: MenuItem): Boolean {
+
+                when (item.itemId) {
+
+                    R.id.home -> {
+                        val intent = Intent(this@AnalyticsActivity, MainActivity::class.java)
+                        startActivity(intent)
+                    }
+
+                    R.id.goals -> {
+                        val intent = Intent(this@AnalyticsActivity, HomePageActivity::class.java)
+                        startActivity(intent)
+                    }
+
+                    R.id.stats -> {
+                        val intent = Intent(this@AnalyticsActivity, ViewPage::class.java)
+                        startActivity(intent)
+                    }
+
+                    R.id.settings -> {
+                        val intent = Intent(this@AnalyticsActivity, profile::class.java)
+                        startActivity(intent)
+                    }
+
+                }
+
+                return true
+            }
+        })
 
         val goalSpinner = findViewById<Spinner>(R.id.goal_spinner)
         val savedAmountTextView = findViewById<TextView>(R.id.saved_amount_text_view)
@@ -77,4 +114,6 @@ class AnalyticsActivity : AppCompatActivity(), AdapterView.OnItemSelectedListene
     override fun onNothingSelected(parent: AdapterView<*>) {
         // Do nothing
     }
+
+
 }

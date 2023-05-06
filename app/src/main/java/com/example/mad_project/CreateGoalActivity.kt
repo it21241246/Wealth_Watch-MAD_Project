@@ -1,12 +1,15 @@
 package com.example.mad_project
 
+import android.content.Intent
 import android.os.Bundle
+import android.view.MenuItem
 import android.widget.Button
 import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.firestore.FirebaseFirestore
 import java.util.*
 import com.example.mad_project.R
+import com.google.android.material.navigation.NavigationBarView
 
 class CreateGoalActivity : AppCompatActivity() {
     private val db = FirebaseFirestore.getInstance()
@@ -48,5 +51,38 @@ class CreateGoalActivity : AppCompatActivity() {
                     TODO()
                 }
         }
+        val nav: NavigationBarView = findViewById(R.id.navbar)
+
+        nav.setOnItemSelectedListener(object : NavigationBarView.OnItemSelectedListener {
+
+            override fun onNavigationItemSelected(item: MenuItem): Boolean {
+
+                when (item.itemId) {
+
+                    R.id.home -> {
+                        val intent = Intent(this@CreateGoalActivity, MainActivity::class.java)
+                        startActivity(intent)
+                    }
+
+                    R.id.goals -> {
+                        val intent = Intent(this@CreateGoalActivity, HomePageActivity::class.java)
+                        startActivity(intent)
+                    }
+
+                    R.id.stats -> {
+                        val intent = Intent(this@CreateGoalActivity, ViewPage::class.java)
+                        startActivity(intent)
+                    }
+
+                    R.id.settings -> {
+                        val intent = Intent(this@CreateGoalActivity, profile::class.java)
+                        startActivity(intent)
+                    }
+
+                }
+
+                return true
+            }
+        })
     }
 }

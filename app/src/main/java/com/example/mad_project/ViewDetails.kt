@@ -92,7 +92,7 @@ class ViewDetails : AppCompatActivity() {
                     }
 
                     R.id.goals -> {
-                        val intent = Intent(this@ViewDetails, profile::class.java)
+                        val intent = Intent(this@ViewDetails, HomePageActivity::class.java)
                         startActivity(intent)
                     }
 
