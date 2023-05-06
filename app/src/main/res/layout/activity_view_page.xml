@@ -16,7 +16,8 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:padding="16dp"
-        android:text="Total expenses for current month: "
+        android:text="@string/total_expenses_for_current_month"
+        android:fontFamily="@font/poppins_bold"
         android:textColor="@android:color/holo_red_dark"
         android:textSize="24sp"
         android:textStyle="bold"
@@ -54,15 +55,18 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="180dp"
         android:padding="16dp"
-        android:text="Total incomes for current month: "
+        android:text="@string/total_incomes_for_current_month"
+        android:fontFamily="@font/poppins_bold"
         android:textColor="#0583F2"
         android:textSize="24sp"
         android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.28" />
 
     <TextView
         android:id="@+id/totalIncomesTextView"
@@ -127,17 +131,20 @@
     </Button>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:layout_width="403dp"
-        android:layout_height="55dp"
         android:id="@+id/navbar"
+        android:layout_width="414dp"
+        android:layout_height="61dp"
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="4dp"
+        app:itemIconTint="@drawable/sssss"
+        app:itemTextColor="@drawable/sssss"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/viewIncomes"
+        app:layout_constraintVertical_bias="1.0"
         app:menu="@menu/menu"
-        app:itemTextColor="@drawable/sssss"
-        app:itemIconTint="@drawable/sssss"
         tools:ignore="MissingConstraints">
 
 
