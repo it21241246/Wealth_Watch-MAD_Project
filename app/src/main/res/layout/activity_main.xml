@@ -4,25 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/dashboardbg"
     tools:context=".MainActivity">
-
-
-    <Button
-
-        android:id="@+id/viewExpenses"
-        android:layout_width="259dp"
-        android:layout_height="53dp"
-        android:layout_centerHorizontal="true"
-        android:background="@drawable/rounded"
-        android:gravity="center"
-        android:text="View Expenses"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.235">
-
-    </Button>
 
     <Button
 
@@ -30,14 +13,18 @@
         android:layout_width="259dp"
         android:layout_height="53dp"
         android:layout_centerHorizontal="true"
-        android:background="@drawable/rounded"
+        android:backgroundTint="#0583F2"
+        android:fontFamily="@font/poppins_medium"
         android:gravity="center"
-        android:text="Add Expenses"
+        android:text="@string/add_expenses"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        app:cornerRadius="70dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.377">
+        app:layout_constraintVertical_bias="0.52">
 
     </Button>
 
@@ -47,49 +34,38 @@
         android:layout_width="259dp"
         android:layout_height="53dp"
         android:layout_centerHorizontal="true"
-        android:background="@drawable/rounded"
+        android:backgroundTint="#0583F2"
+        android:fontFamily="@font/poppins_medium"
         android:gravity="center"
+        android:text="@string/add_income"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        app:cornerRadius="70dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:text="Add Incomes"
-        app:layout_constraintVertical_bias="0.787">
+        app:layout_constraintVertical_bias="0.383">
 
     </Button>
 
-    <Button
 
-        android:id="@+id/viewIncomes"
-        android:layout_width="259dp"
-        android:layout_height="53dp"
-        android:layout_centerHorizontal="true"
-        android:background="@drawable/rounded"
-        android:gravity="center"
-        android:text="View Incomes"
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:layout_width="403dp"
+        android:layout_height="55dp"
+        android:id="@+id/navbar"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="4dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.662">
+        app:menu="@menu/menu"
+        app:itemTextColor="@drawable/sssss"
+        app:itemIconTint="@drawable/sssss"
+        tools:ignore="MissingConstraints">
 
-    </Button>
 
-    <Button
+    </com.google.android.material.bottomnavigation.BottomNavigationView>
 
-        android:id="@+id/UserProfile"
-        android:layout_width="259dp"
-        android:layout_height="53dp"
-        android:layout_centerHorizontal="true"
-        android:background="@drawable/rounded"
-        android:gravity="center"
-        android:text="User Profile"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.532">
-
-    </Button>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

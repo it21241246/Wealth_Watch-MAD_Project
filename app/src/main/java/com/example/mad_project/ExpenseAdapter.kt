@@ -104,6 +104,7 @@ class ExpensesAdapter(private val context: Context) : RecyclerView.Adapter<Expen
                 val updatedAmount = updatedAmountStr.toDouble()
 
 
+
                 // Update the user's details in the database
                 val expenseId = expenses.id
                 val db = FirebaseFirestore.getInstance()
@@ -117,7 +118,7 @@ class ExpensesAdapter(private val context: Context) : RecyclerView.Adapter<Expen
                         ))
                         .addOnSuccessListener {
                             // Show a success message if the user's details are updated
-                            Toast.makeText(holder.itemView.context, "User details updated", Toast.LENGTH_SHORT).show()
+                            Toast.makeText(holder.itemView.context, "Expense Details Updated", Toast.LENGTH_SHORT).show()
 
                             // Update the user's details in the local list and refresh the adapter
                             expense.name = updatedName
@@ -141,7 +142,6 @@ class ExpensesAdapter(private val context: Context) : RecyclerView.Adapter<Expen
             val dialog = builder.create()
             dialog.show()
         }
-
     }
 
 

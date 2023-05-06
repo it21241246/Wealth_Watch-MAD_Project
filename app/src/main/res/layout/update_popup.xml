@@ -10,11 +10,12 @@
         android:id="@+id/textView2"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:fontFamily="@font/poppins_bold"
+        android:fontFamily="@font/poppins"
         android:gravity="center"
+        android:textStyle="bold"
         android:text="@string/update_expense"
-        android:textColor="@color/buttonblue"
-        android:textSize="40dp"
+        android:textColor="@color/btn_Green"
+        android:textSize="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
@@ -27,21 +28,25 @@
         android:id="@+id/textView3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_medium"
         android:gravity="center"
         android:text="@string/description"
+        android:textColor="#0583F2"
         android:textSize="20sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/textname"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView2"
-        app:layout_constraintVertical_bias="0.068" />
+        app:layout_constraintVertical_bias="0.12" />
 
     <EditText
         android:id="@+id/textname"
         android:layout_width="393dp"
         android:layout_height="54dp"
         android:gravity="center"
+        android:background="@drawable/edit_text_modify"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -54,12 +59,13 @@
         android:id="@+id/textView5"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_medium"
         android:gravity="center"
         android:text="@string/amountUpdateExp"
+        android:textColor="#0583F2"
         android:textSize="20sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/textView4"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textname"
         app:layout_constraintVertical_bias="0.061" />
@@ -69,6 +75,7 @@
         android:layout_width="384dp"
         android:layout_height="50dp"
         android:gravity="center"
+        android:background="@drawable/edit_text_modify"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.666"
@@ -77,51 +84,6 @@
         app:layout_constraintVertical_bias="0.075">
 
     </EditText>
-
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="@string/date_and_time"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/textname"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textamount"
-        app:layout_constraintVertical_bias="0.083" />
-
-    <EditText
-        android:id="@+id/txtdt"
-        android:layout_width="374dp"
-        android:layout_height="61dp"
-        android:gravity="center"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.567"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4"
-        app:layout_constraintVertical_bias="0.06">
-
-    </EditText>
-
-    <Button
-        android:id="@+id/btnupdate"
-        android:layout_width="222dp"
-        android:layout_height="64dp"
-        android:backgroundTint="#0583F2"
-        android:gravity="center"
-        android:text="@string/updateExpButton"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:cornerRadius="70dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.555"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtdt"
-        app:layout_constraintVertical_bias="0.307" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

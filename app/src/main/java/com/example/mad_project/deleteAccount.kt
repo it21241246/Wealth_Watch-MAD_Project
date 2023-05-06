@@ -1,8 +1,11 @@
 package com.example.mad_project
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.MenuItem
 import android.widget.Toast
+import com.google.android.material.navigation.NavigationBarView
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 
@@ -41,6 +44,8 @@ class deleteAccount : AppCompatActivity() {
                     Toast.makeText(this, exception.message, Toast.LENGTH_SHORT).show()
                 }
         }
+
+
 
     }
 }

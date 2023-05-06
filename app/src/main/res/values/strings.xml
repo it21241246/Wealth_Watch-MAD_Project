@@ -4,8 +4,10 @@
     <string name="LoginHeading">Login</string>
     <string name="RegisterHeading01">Create new</string>
     <string name="RegisterHeading02">Account</string>
+    <string name="user_profile">User Profile</string>
 
-<!--   expenses string values-->
+
+    <!--   expenses string values-->
     <string name="NameExp">Name</string>
     <string name="amount">Amount</string>
     <string name="date">Date</string>
@@ -16,14 +18,25 @@
     <string name="amountUpdateExp">Amount</string>
     <string name="date_and_time">Date and time</string>
     <string name="updateExpButton">Update</string>
+    <string name="add_expenses">Add Expenses</string>
+    <string name="view_expenses">View Expenses</string>
 
 
-<!--    income string values-->
+    <!--    income string values-->
     <string name="name">Name</string>
     <string name="dateincome">Date</string>
     <string name="amountincome">Amount</string>
     <string name="deleteincome">Delete</string>
     <string name="editincome">Edit</string>
+    <string name="descriptionIncome">Description</string>
+    <string name="amountIncome">Amount</string>
+    <string name="date_and_time_income">Date and time</string>
+    <string name="view_income">View Income</string>
+    <string name="add_income">Add Income</string>
+    <string name="dasboard">Dasboard</string>
+    <string name="goals">Goals</string>
+    <string name="stats">Stats</string>
+    <string name="settings">Settings</string>
 
 
 </resources>
