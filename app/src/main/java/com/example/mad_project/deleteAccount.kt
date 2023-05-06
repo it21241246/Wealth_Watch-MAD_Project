@@ -1,5 +1,6 @@
 package com.example.mad_project
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -13,18 +14,20 @@ class deleteAccount : AppCompatActivity() {
 
     private lateinit var firebaseAuth: FirebaseAuth
     private lateinit var firestore: FirebaseFirestore
+    private lateinit var userId: String
 
+    @SuppressLint("SuspiciousIndentation")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         firebaseAuth = FirebaseAuth.getInstance()
         firestore = FirebaseFirestore.getInstance()
 
-        val uid = firebaseAuth.currentUser?.uid
+        userId = firebaseAuth.currentUser?.uid ?: ""
 
         // Delete the user's document from Firestore
-        if (uid != null) {
-            firestore.collection("users").document(uid)
+
+            firestore.collection("users").document(userId)
                 .delete()
                 .addOnSuccessListener {
                     // Delete the user's authentication account
@@ -43,7 +46,41 @@ class deleteAccount : AppCompatActivity() {
                 .addOnFailureListener { exception ->
                     Toast.makeText(this, exception.message, Toast.LENGTH_SHORT).show()
                 }
-        }
+        val nav: NavigationBarView = findViewById(R.id.navbar)
+
+        nav.setOnItemSelectedListener(object : NavigationBarView.OnItemSelectedListener {
+
+            override fun onNavigationItemSelected(item: MenuItem): Boolean {
+
+                when (item.itemId) {
+
+                    R.id.home -> {
+                        val intent = Intent(this@deleteAccount, MainActivity::class.java)
+                        startActivity(intent)
+                    }
+
+                    R.id.goals -> {
+                        val intent = Intent(this@deleteAccount, HomePageActivity::class.java)
+                        startActivity(intent)
+                    }
+
+                    R.id.stats -> {
+                        val intent = Intent(this@deleteAccount, ViewPage::class.java)
+                        startActivity(intent)
+                    }
+
+                    R.id.settings -> {
+                        val intent = Intent(this@deleteAccount, profile::class.java)
+                        startActivity(intent)
+                    }
+
+                }
+
+                return true
+            }
+        })
+
+
 
 
 

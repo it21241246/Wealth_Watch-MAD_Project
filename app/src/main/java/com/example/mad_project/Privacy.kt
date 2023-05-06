@@ -42,7 +42,7 @@ class Privacy : AppCompatActivity() {
                     }
 
                     R.id.goals -> {
-                        val intent = Intent(this@Privacy, profile::class.java)
+                        val intent = Intent(this@Privacy, HomePageActivity::class.java)
                         startActivity(intent)
                     }
 

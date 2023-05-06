@@ -122,7 +122,7 @@ class AddIncomesActivity : AppCompatActivity() {
                     }
 
                     R.id.goals -> {
-                        val intent = Intent(this@AddIncomesActivity, profile::class.java)
+                        val intent = Intent(this@AddIncomesActivity, HomePageActivity::class.java)
                         startActivity(intent)
                     }
 

@@ -62,7 +62,7 @@ class DisplayIncome : AppCompatActivity() {
                     }
 
                     R.id.goals -> {
-                        val intent = Intent(this@DisplayIncome, profile::class.java)
+                        val intent = Intent(this@DisplayIncome, HomePageActivity::class.java)
                         startActivity(intent)
                     }
 

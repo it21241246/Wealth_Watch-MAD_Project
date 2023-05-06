@@ -31,11 +31,6 @@ class profile : AppCompatActivity() {
         showName = findViewById(R.id.UserNameHeading)
         showEmail = findViewById(R.id.UserEmailHeading)
 
-        binding.Dashboardbtn.setOnClickListener {
-            startActivity(
-                Intent(this, MainActivity::class.java)
-            )
-        }
 
         binding.ViewButton.setOnClickListener {
             startActivity(
@@ -94,7 +89,7 @@ class profile : AppCompatActivity() {
                     }
 
                     R.id.goals -> {
-                        val intent = Intent(this@profile, profile::class.java)
+                        val intent = Intent(this@profile, HomePageActivity::class.java)
                         startActivity(intent)
                     }
 

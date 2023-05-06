@@ -65,7 +65,7 @@ class DisplayExpenses : AppCompatActivity() {
                     }
 
                     R.id.goals -> {
-                        val intent = Intent(this@DisplayExpenses, profile::class.java)
+                        val intent = Intent(this@DisplayExpenses, HomePageActivity::class.java)
                         startActivity(intent)
                     }
 
