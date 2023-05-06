@@ -18,9 +18,6 @@
             android:label="Material Button"
             tools:ignore="Instantiatable" />
         <activity
-            android:name=".summary"
-            android:exported="false" />
-        <activity
             android:name=".ViewPage"
             android:exported="false" />
         <activity

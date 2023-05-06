@@ -15,7 +15,7 @@ import com.google.android.material.navigation.NavigationView
 import org.checkerframework.checker.nullness.qual.NonNull
 
 
-class MainActivity : AppCompatActivity() {
+class   MainActivity : AppCompatActivity() {
 
 
     override fun onCreate(savedInstanceState: Bundle?) {

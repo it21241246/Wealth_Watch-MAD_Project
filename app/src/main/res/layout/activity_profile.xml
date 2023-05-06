@@ -11,9 +11,9 @@
         android:id="@+id/UserNameHeading"
         android:layout_width="282dp"
         android:layout_height="34dp"
-        android:layout_marginEnd="68dp"
-        android:layout_marginBottom="296dp"
-        android:text="Muditha Pradeeptha"
+        android:layout_marginEnd="64dp"
+        android:layout_marginBottom="288dp"
+        android:text="---------------------"
         android:textAlignment="center"
         android:textColor="#FFFFFF"
         android:textSize="20sp"
@@ -25,9 +25,9 @@
         android:id="@+id/UserEmailHeading"
         android:layout_width="284dp"
         android:layout_height="28dp"
-        android:layout_marginEnd="68dp"
-        android:layout_marginBottom="276dp"
-        android:text="mudithapradeeptha@gmail.com"
+        android:layout_marginEnd="64dp"
+        android:layout_marginBottom="272dp"
+        android:text="--------------------"
         android:textAlignment="center"
         android:textColor="#FFFFFF"
         android:textSize="15sp"
@@ -62,21 +62,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/Dashboardbtn"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="16dp"
-        android:background="@drawable/btn_bg"
-        android:text="Dasboard"
-        android:textColor="@color/white"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.402" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/EditButton"

@@ -13,6 +13,7 @@ class deleteAccount : AppCompatActivity() {
 
     private lateinit var firebaseAuth: FirebaseAuth
     private lateinit var firestore: FirebaseFirestore
+    private lateinit var userId: String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -20,11 +21,11 @@ class deleteAccount : AppCompatActivity() {
         firebaseAuth = FirebaseAuth.getInstance()
         firestore = FirebaseFirestore.getInstance()
 
-        val uid = firebaseAuth.currentUser?.uid
+        userId = firebaseAuth.currentUser?.uid ?: ""
 
         // Delete the user's document from Firestore
-        if (uid != null) {
-            firestore.collection("users").document(uid)
+
+            firestore.collection("users").document(userId)
                 .delete()
                 .addOnSuccessListener {
                     // Delete the user's authentication account
@@ -43,7 +44,7 @@ class deleteAccount : AppCompatActivity() {
                 .addOnFailureListener { exception ->
                     Toast.makeText(this, exception.message, Toast.LENGTH_SHORT).show()
                 }
-        }
+
 
 
 
