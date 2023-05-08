@@ -11,50 +11,37 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MADProject"
         tools:targetApi="31">
+        <activity
+            android:name=".splash"
+            android:exported="true">
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
 
-
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+        </activity>
         <activity
             android:name="com.google.android.material.button.MaterialButton"
             android:label="Material Button"
-            tools:ignore="Instantiatable" />
-
-        <!--    Goals manifest files -->
-
+            tools:ignore="Instantiatable" /> <!-- Goals manifest files -->
         <activity
             android:name=".EditGoalActivity"
-            android:exported="false"/>
-
-
+            android:exported="false" />
         <activity
             android:name=".MainActivitygoal"
-            android:exported="false"/>
-
-
+            android:exported="false" />
         <activity
             android:name=".HomePageActivity"
-            android:exported="false"/>
-
-
+            android:exported="false" />
         <activity
             android:name=".CreateGoalActivity"
-            android:exported="false"/>
-
-
-
+            android:exported="false" />
         <activity
             android:name=".AnalyticsActivity"
-            android:exported="false"/>
-
-
+            android:exported="false" />
         <activity
             android:name=".CurrentGoalsActivity"
-            android:exported="false"/>
-
-
-
-        <!--    Goals manifest files -->
-
-
+            android:exported="false" /> <!-- Goals manifest files -->
         <activity
             android:name=".ViewPage"
             android:exported="false" />
@@ -96,13 +83,8 @@
             android:exported="false" />
         <activity
             android:name=".Login"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+            android:exported="false"/>
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
