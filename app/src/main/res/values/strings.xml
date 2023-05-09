@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">MAD-Project</string>
+    <string name="app_name">Wealth Watch</string>
 
     <string name="LoginHeading">Login</string>
     <string name="RegisterHeading01">Create new</string>

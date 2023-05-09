@@ -16,9 +16,10 @@ class deleteAccount : AppCompatActivity() {
     private lateinit var firestore: FirebaseFirestore
     private lateinit var userId: String
 
-    @SuppressLint("SuspiciousIndentation")
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
 
         firebaseAuth = FirebaseAuth.getInstance()
         firestore = FirebaseFirestore.getInstance()
@@ -46,39 +47,7 @@ class deleteAccount : AppCompatActivity() {
                 .addOnFailureListener { exception ->
                     Toast.makeText(this, exception.message, Toast.LENGTH_SHORT).show()
                 }
-        val nav: NavigationBarView = findViewById(R.id.navbar)
 
-        nav.setOnItemSelectedListener(object : NavigationBarView.OnItemSelectedListener {
-
-            override fun onNavigationItemSelected(item: MenuItem): Boolean {
-
-                when (item.itemId) {
-
-                    R.id.home -> {
-                        val intent = Intent(this@deleteAccount, MainActivity::class.java)
-                        startActivity(intent)
-                    }
-
-                    R.id.goals -> {
-                        val intent = Intent(this@deleteAccount, HomePageActivity::class.java)
-                        startActivity(intent)
-                    }
-
-                    R.id.stats -> {
-                        val intent = Intent(this@deleteAccount, ViewPage::class.java)
-                        startActivity(intent)
-                    }
-
-                    R.id.settings -> {
-                        val intent = Intent(this@deleteAccount, profile::class.java)
-                        startActivity(intent)
-                    }
-
-                }
-
-                return true
-            }
-        })
 
 
 

@@ -23,7 +23,7 @@ class ViewDetails : AppCompatActivity() {
     private lateinit var showName: TextView
     private lateinit var showEmail: TextView
     private lateinit var showPhone: TextView
-    private lateinit var showPassword: TextView
+    //private lateinit var showPassword: TextView
 
 
     private val db = Firebase.firestore
@@ -41,7 +41,7 @@ class ViewDetails : AppCompatActivity() {
         showName = findViewById(R.id.showName)
         showEmail = findViewById(R.id.showEmail)
         showPhone = findViewById(R.id.showPhone)
-        showPassword = findViewById(R.id.showPassword)
+        //showPassword = findViewById(R.id.showPassword)
 
         binding.EditButton.setOnClickListener {
             startActivity(
@@ -72,7 +72,7 @@ class ViewDetails : AppCompatActivity() {
                     showName.text = name
                     showEmail.text = email
                     showPhone.text = phone
-                    showPassword.text = password
+                    //showPassword.text = password
                 }
             }
             .addOnFailureListener { exception ->
