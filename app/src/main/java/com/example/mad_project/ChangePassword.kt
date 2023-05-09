@@ -74,7 +74,6 @@ class ChangePassword : AppCompatActivity() {
                                                     Toast.LENGTH_SHORT
                                                 ).show()
                                                 auth.signOut()
-                                                finish()
                                             }
                                             .addOnFailureListener {
                                                 Toast.makeText(
