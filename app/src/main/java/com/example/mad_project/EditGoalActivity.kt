@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.MenuItem
 import android.widget.Button
 import android.widget.EditText
+import android.widget.Toast
 import com.google.android.material.navigation.NavigationBarView
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
@@ -59,6 +60,8 @@ class EditGoalActivity : AppCompatActivity() {
                 .set(Goal(goalId, name, amount, savedAmount, description, category))
                 .addOnSuccessListener {
                     // Handle success
+                    //toast message
+                    Toast.makeText(this, "Goal Updated successfully", Toast.LENGTH_SHORT).show()
                     finish()
                 }
                 .addOnFailureListener { exception ->
@@ -74,6 +77,8 @@ class EditGoalActivity : AppCompatActivity() {
                 .delete()
                 .addOnSuccessListener {
                     // Handle success
+                    //toast message
+                    Toast.makeText(this, "Goal Deleted successfully", Toast.LENGTH_SHORT).show()
                     finish()
                 }
                 .addOnFailureListener { exception ->

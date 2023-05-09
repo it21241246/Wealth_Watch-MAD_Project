@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.MenuItem
 import android.widget.Button
 import android.widget.EditText
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.firestore.FirebaseFirestore
 import java.util.*
@@ -44,6 +45,7 @@ class CreateGoalActivity : AppCompatActivity() {
                 .add(goal)
                 .addOnSuccessListener {
                     // Display a success message or go back to the previous screen
+                    Toast.makeText(this, "Goal added successfully", Toast.LENGTH_SHORT).show()
                     finish()
                 }
                 .addOnFailureListener {
