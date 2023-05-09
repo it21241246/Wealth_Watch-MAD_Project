@@ -78,7 +78,7 @@ class EditGoalActivity : AppCompatActivity() {
                 .addOnSuccessListener {
                     // Handle success
                     //toast message
-                    Toast.makeText(this, "Goal Deleted successfully", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, "Goal Deleted successfully!", Toast.LENGTH_SHORT).show()
                     finish()
                 }
                 .addOnFailureListener { exception ->
