@@ -5,11 +5,13 @@ import android.os.Bundle
 import android.view.MenuItem
 import android.widget.Button
 import android.widget.EditText
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.firestore.FirebaseFirestore
 import java.util.*
 import com.example.mad_project.R
 import com.google.android.material.navigation.NavigationBarView
+import com.google.firebase.auth.FirebaseAuth
 
 class CreateGoalActivity : AppCompatActivity() {
     private val db = FirebaseFirestore.getInstance()
@@ -22,16 +24,24 @@ class CreateGoalActivity : AppCompatActivity() {
         val amountEditText = findViewById<EditText>(R.id.amount_edit_text)
         val descriptionEditText = findViewById<EditText>(R.id.description_edit_text)
         val categoryEditText = findViewById<EditText>(R.id.category_edit_text)
+        var firebaseAuth: FirebaseAuth = FirebaseAuth.getInstance()
 
         val createButton = findViewById<Button>(R.id.create_button)
         createButton.setOnClickListener {
             val name = nameEditText.text.toString()
-            val amount = amountEditText.text.toString().toDoubleOrNull() ?: 0.0
+            val amount = amountEditText.text.toString().toDoubleOrNull()
             val description = descriptionEditText.text.toString()
             val category = categoryEditText.text.toString()
+            val userId = FirebaseAuth.getInstance().currentUser?.uid
+
+            if (name.isEmpty() || amount == null || description.isEmpty() || category.isEmpty()) {
+                Toast.makeText(this, "Please fill in all fields!", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
 
             // Create a new goal with the given data
             val goal = hashMapOf(
+                "userId" to userId,
                 "name" to name,
                 "amount" to amount,
                 "description" to description,
@@ -44,6 +54,7 @@ class CreateGoalActivity : AppCompatActivity() {
                 .add(goal)
                 .addOnSuccessListener {
                     // Display a success message or go back to the previous screen
+                    Toast.makeText(this, "Goal added successfully", Toast.LENGTH_SHORT).show()
                     finish()
                 }
                 .addOnFailureListener {

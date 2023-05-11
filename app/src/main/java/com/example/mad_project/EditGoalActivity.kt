@@ -6,7 +6,9 @@ import android.os.Bundle
 import android.view.MenuItem
 import android.widget.Button
 import android.widget.EditText
+import android.widget.Toast
 import com.google.android.material.navigation.NavigationBarView
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 
@@ -23,6 +25,7 @@ class EditGoalActivity : AppCompatActivity() {
         val descriptionEditText = findViewById<EditText>(R.id.edit_goal_description_edit_text)
         val categoryEditText = findViewById<EditText>(R.id.edit_goal_category_edit_text)
         val savedAmountEditText = findViewById<EditText>(R.id.edit_goal_saved_amount_edit_text)
+
 
         val goalId = intent.getStringExtra("GOAL_ID")
         if (goalId == null) {
@@ -49,16 +52,25 @@ class EditGoalActivity : AppCompatActivity() {
         val updateButton = findViewById<Button>(R.id.update_goal_button)
         updateButton.setOnClickListener {
             val name = nameEditText.text.toString()
-            val amount = amountEditText.text.toString().toDoubleOrNull() ?: 0.0
-            val savedAmount = savedAmountEditText.text.toString().toDoubleOrNull() ?: 0.0
+            val amount = amountEditText.text.toString().toDouble() ?: 0.0
+            val savedAmount = savedAmountEditText.text.toString().toDouble() ?: 0.0
             val description = descriptionEditText.text.toString()
             val category = categoryEditText.text.toString()
+            val userId = FirebaseAuth.getInstance().currentUser?.uid ?: ""
+
+            if (name.isEmpty() || amount == null || savedAmount == null || description.isEmpty() || category.isEmpty()) {
+                Toast.makeText(this, "Please fill in all the fields to update!", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+
 
             db.collection("goals")
                 .document(goalId)
-                .set(Goal(goalId, name, amount, savedAmount, description, category))
+                .set(Goal(userId, goalId, name, amount, savedAmount, description, category))
                 .addOnSuccessListener {
                     // Handle success
+                    //toast message
+                    Toast.makeText(this, "Goal Updated successfully", Toast.LENGTH_SHORT).show()
                     finish()
                 }
                 .addOnFailureListener { exception ->
@@ -74,6 +86,8 @@ class EditGoalActivity : AppCompatActivity() {
                 .delete()
                 .addOnSuccessListener {
                     // Handle success
+                    //toast message
+                    Toast.makeText(this, "Goal Deleted successfully!", Toast.LENGTH_SHORT).show()
                     finish()
                 }
                 .addOnFailureListener { exception ->

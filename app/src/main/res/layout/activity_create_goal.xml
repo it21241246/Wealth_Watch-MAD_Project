@@ -11,10 +11,10 @@
         android:id="@+id/imageView6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:scaleType="centerCrop"
         android:layout_margin="10dp"
         android:background="#03A66A"
         android:backgroundTint="#003A66AF"
+        android:scaleType="centerCrop"
         app:srcCompat="@drawable/create"
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="0dp" />
@@ -36,40 +36,7 @@
         app:layout_constraintHorizontal_bias="0.122"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.403" />
-
-    <EditText
-        android:id="@+id/description_edit_text"
-        android:layout_width="280dp"
-        android:layout_height="54dp"
-        android:layout_marginBottom="80dp"
-        android:background="@drawable/boarder"
-        android:drawableLeft="@drawable/name"
-        android:drawablePadding="10dp"
-        android:hint="Description"
-        android:padding="16dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.122"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.705" />
-
-    <EditText
-        android:id="@+id/category_edit_text"
-        android:layout_width="280dp"
-        android:layout_height="54dp"
-        android:background="@drawable/boarder"
-        android:drawableLeft="@drawable/cate"
-        android:drawablePadding="10dp"
-        android:hint="Category"
-        android:padding="16dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.122"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.726" />
+        app:layout_constraintVertical_bias="0.418" />
 
     <EditText
         android:id="@+id/amount_edit_text"
@@ -86,7 +53,40 @@
         app:layout_constraintHorizontal_bias="0.122"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/imageView6"
-        app:layout_constraintVertical_bias="0.512" />
+        app:layout_constraintVertical_bias="0.527" />
+
+    <EditText
+        android:id="@+id/category_edit_text"
+        android:layout_width="280dp"
+        android:layout_height="54dp"
+        android:background="@drawable/boarder"
+        android:drawableLeft="@drawable/cate"
+        android:drawablePadding="10dp"
+        android:hint="Category"
+        android:padding="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.122"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.734" />
+
+    <EditText
+        android:id="@+id/description_edit_text"
+        android:layout_width="280dp"
+        android:layout_height="54dp"
+        android:layout_marginBottom="80dp"
+        android:background="@drawable/boarder"
+        android:drawableLeft="@drawable/name"
+        android:drawablePadding="10dp"
+        android:hint="Description"
+        android:padding="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.122"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.713" />
 
     <Button
         android:id="@+id/create_button"
