@@ -24,38 +24,57 @@
         android:textSize="24sp"
         tools:ignore="MissingConstraints" />
 
+
     <TextView
         android:id="@+id/saved_amount_text_view"
-        android:layout_width="200dp"
-        android:layout_height="100dp"
+        android:layout_width="183dp"
+        android:layout_height="88dp"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
         android:background="@drawable/rounded_corner"
         android:gravity="center"
         android:textAlignment="center"
         android:textColor="#FFFFFF"
-        android:textSize="24sp"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.867"
+        app:layout_constraintHorizontal_bias="0.868"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.614" />
+        app:layout_constraintVertical_bias="0.69" />
 
     <TextView
         android:id="@+id/to_be_saved_text_view"
-        android:layout_width="200dp"
-        android:layout_height="100dp"
-        android:layout_marginBottom="120dp"
+        android:layout_width="183dp"
+        android:layout_height="88dp"
+        android:layout_marginBottom="100dp"
         android:background="@drawable/rounded_corner"
         android:gravity="center"
         android:textAlignment="center"
         android:textColor="#FFFFFF"
-        android:textSize="24sp"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.867"
+        app:layout_constraintHorizontal_bias="0.868"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/remaining_days_text_view"
+        android:layout_width="183dp"
+        android:layout_height="88dp"
+        android:layout_marginBottom="120dp"
+        android:background="@drawable/rounded_corner"
+        android:text="Remaining days: 0"
+        android:gravity="center"
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.868"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imageView7"
+        app:layout_constraintVertical_bias="0.661" />
 
     <Spinner
         android:id="@+id/goal_spinner"

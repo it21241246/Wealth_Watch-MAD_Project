@@ -13,7 +13,9 @@ import com.google.firebase.firestore.ktx.toObject
 import android.view.View
 import com.google.android.material.navigation.NavigationBarView
 import com.google.firebase.auth.FirebaseAuth
-
+import java.text.SimpleDateFormat
+import java.util.*
+import kotlin.math.max
 
 class AnalyticsActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
 
@@ -62,7 +64,7 @@ class AnalyticsActivity : AppCompatActivity(), AdapterView.OnItemSelectedListene
         val goalSpinner = findViewById<Spinner>(R.id.goal_spinner)
         val savedAmountTextView = findViewById<TextView>(R.id.saved_amount_text_view)
         val toBeSavedTextView = findViewById<TextView>(R.id.to_be_saved_text_view)
-        var firebaseAuth: FirebaseAuth = FirebaseAuth.getInstance()
+        val remainingDaysTextView = findViewById<TextView>(R.id.remaining_days_text_view)
         val userId = FirebaseAuth.getInstance().currentUser?.uid
 
         // Get goals from Firebase Firestore and populate the spinner
@@ -81,9 +83,7 @@ class AnalyticsActivity : AppCompatActivity(), AdapterView.OnItemSelectedListene
                 // Set the initial selected goal
                 if (goals.isNotEmpty()) {
                     selectedGoal = goals.first()
-                    savedAmountTextView.text = "Amount saved so far: ${selectedGoal.savedAmount}"
-                    val toBeSaved = selectedGoal.amount - selectedGoal.savedAmount
-                    toBeSavedTextView.text = "Amount yet to be saved: $toBeSaved"
+                    updateGoalDetails()
                 }
 
                 goalSpinner.onItemSelectedListener = this
@@ -103,11 +103,7 @@ class AnalyticsActivity : AppCompatActivity(), AdapterView.OnItemSelectedListene
             .addOnSuccessListener { result ->
                 if (result.documents.isNotEmpty()) {
                     selectedGoal = result.documents.first().toObject<Goal>()!!
-                    val toBeSaved = selectedGoal.amount - selectedGoal.savedAmount
-                    findViewById<TextView>(R.id.saved_amount_text_view).text =
-                        "Amount saved so far: ${selectedGoal.savedAmount}"
-                    findViewById<TextView>(R.id.to_be_saved_text_view).text =
-                        "Amount yet to be saved: $toBeSaved"
+                    updateGoalDetails()
                 }
             }
             .addOnFailureListener { exception ->
@@ -119,5 +115,48 @@ class AnalyticsActivity : AppCompatActivity(), AdapterView.OnItemSelectedListene
         // Do nothing
     }
 
+    private fun updateGoalDetails() {
+        val savedAmountTextView = findViewById<TextView>(R.id.saved_amount_text_view)
+        val toBesavedTextView = findViewById<TextView>(R.id.to_be_saved_text_view)
+        val remainingDaysTextView = findViewById<TextView>(R.id.remaining_days_text_view)
 
+        savedAmountTextView.text = "Amount saved so far: ${selectedGoal.savedAmount}"
+        val toBeSaved = selectedGoal.amount - selectedGoal.savedAmount
+        toBesavedTextView.text = "Amount yet to be saved: $toBeSaved"
+
+        // Calculate remaining days
+        val currentDate = Calendar.getInstance().time
+        val completeDate = selectedGoal.completeDate
+        val remainingDays = calculateRemainingDays(currentDate, completeDate)
+        remainingDaysTextView.text = "Remaining days: $remainingDays"
+    }
+    private fun calculateRemainingDays(currentDate: Date, completeDate: Date): Int {
+        // Set the time to 00:00:00 for both dates to remove the effect of time
+        val currentCal = Calendar.getInstance().apply {
+            time = currentDate
+            set(Calendar.HOUR_OF_DAY, 0)
+            set(Calendar.MINUTE, 0)
+            set(Calendar.SECOND, 0)
+            set(Calendar.MILLISECOND, 0)
+        }
+
+        val completeCal = Calendar.getInstance().apply {
+            time = completeDate
+            set(Calendar.HOUR_OF_DAY, 0)
+            set(Calendar.MINUTE, 0)
+            set(Calendar.SECOND, 0)
+            set(Calendar.MILLISECOND, 0)
+        }
+
+        // Calculate the difference in days
+        val diffInMillis = completeCal.timeInMillis - currentCal.timeInMillis
+        val diffInDays = diffInMillis / (1000 * 60 * 60 * 24)
+
+        // Add 1 to include the completeDate as well
+        return max(diffInDays.toInt() + 1, 0)
+    }
 }
+
+
+
+
