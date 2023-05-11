@@ -7,12 +7,11 @@
     android:orientation="vertical">
 
     <ImageView
-        android:id="@+id/imageView3"
+        android:id="@+id/imageView8"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:scaleType="centerCrop"
-        app:srcCompat="@drawable/edit2"
-        tools:layout_editor_absoluteX="0dp"
+        app:srcCompat="@drawable/new_edit"
+        tools:layout_editor_absoluteX="-2dp"
         tools:layout_editor_absoluteY="0dp" />
 
     <EditText
@@ -25,55 +24,10 @@
         android:hint="Name"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.221"
+        app:layout_constraintHorizontal_bias="0.122"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.334" />
-
-    <EditText
-        android:id="@+id/edit_goal_saved_amount_edit_text"
-        android:layout_width="280dp"
-        android:layout_height="56dp"
-        android:background="@drawable/boarder"
-        android:drawableLeft="@drawable/baseline_attach_money_24"
-        android:drawablePadding="10dp"
-        android:hint="Amount saved so far"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.221"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.742" />
-
-    <EditText
-        android:id="@+id/edit_goal_amount_edit_text"
-        android:layout_width="280dp"
-        android:layout_height="56dp"
-        android:background="@drawable/boarder"
-        android:drawableLeft="@drawable/baseline_attach_money_24"
-        android:drawablePadding="10dp"
-        android:hint="Amount"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.221"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.635" />
-
-    <EditText
-        android:id="@+id/edit_goal_description_edit_text"
-        android:layout_width="280dp"
-        android:layout_height="56dp"
-        android:background="@drawable/boarder"
-        android:drawableLeft="@drawable/name"
-        android:drawablePadding="10dp"
-        android:hint="Description"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.221"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.428" />
+        app:layout_constraintVertical_bias="0.383" />
 
     <EditText
         android:id="@+id/edit_goal_category_edit_text"
@@ -85,10 +39,55 @@
         android:hint="Category"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.221"
+        app:layout_constraintHorizontal_bias="0.122"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.527" />
+        app:layout_constraintVertical_bias="0.582" />
+
+    <EditText
+        android:id="@+id/edit_goal_amount_edit_text"
+        android:layout_width="280dp"
+        android:layout_height="56dp"
+        android:background="@drawable/boarder"
+        android:drawableLeft="@drawable/baseline_attach_money_24"
+        android:drawablePadding="10dp"
+        android:hint="Amount"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.122"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.68" />
+
+    <EditText
+        android:id="@+id/edit_goal_saved_amount_edit_text"
+        android:layout_width="280dp"
+        android:layout_height="56dp"
+        android:background="@drawable/boarder"
+        android:drawableLeft="@drawable/baseline_attach_money_24"
+        android:drawablePadding="10dp"
+        android:hint="Amount saved so far"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.122"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.782" />
+
+    <EditText
+        android:id="@+id/edit_goal_description_edit_text"
+        android:layout_width="280dp"
+        android:layout_height="56dp"
+        android:background="@drawable/boarder"
+        android:drawableLeft="@drawable/name"
+        android:drawablePadding="10dp"
+        android:hint="Description"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.122"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.482" />
 
     <Button
         android:id="@+id/delete_goal_button"
@@ -102,7 +101,7 @@
         app:layout_constraintHorizontal_bias="0.557"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.872" />
+        app:layout_constraintVertical_bias="0.877" />
 
     <Button
         android:id="@+id/update_goal_button"
@@ -113,10 +112,10 @@
         app:cornerRadius="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.147"
+        app:layout_constraintHorizontal_bias="0.182"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.872" />
+        app:layout_constraintVertical_bias="0.877" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/navbar"
@@ -128,9 +127,8 @@
         app:itemTextColor="@drawable/sssss"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.666"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintVertical_bias="1.0"
         app:menu="@menu/menu"
         tools:ignore="MissingConstraints">
 
