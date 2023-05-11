@@ -12,6 +12,7 @@ import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ktx.toObject
 import android.view.View
 import com.google.android.material.navigation.NavigationBarView
+import com.google.firebase.auth.FirebaseAuth
 
 
 class AnalyticsActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
@@ -61,9 +62,12 @@ class AnalyticsActivity : AppCompatActivity(), AdapterView.OnItemSelectedListene
         val goalSpinner = findViewById<Spinner>(R.id.goal_spinner)
         val savedAmountTextView = findViewById<TextView>(R.id.saved_amount_text_view)
         val toBeSavedTextView = findViewById<TextView>(R.id.to_be_saved_text_view)
+        var firebaseAuth: FirebaseAuth = FirebaseAuth.getInstance()
+        val userId = FirebaseAuth.getInstance().currentUser?.uid
 
         // Get goals from Firebase Firestore and populate the spinner
         db.collection("goals")
+            .whereEqualTo("userId", userId)
             .get()
             .addOnSuccessListener { result ->
                 val goals = result.toObjects(Goal::class.java)

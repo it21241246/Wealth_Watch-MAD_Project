@@ -11,6 +11,7 @@ import com.google.firebase.firestore.FirebaseFirestore
 import java.util.*
 import com.example.mad_project.R
 import com.google.android.material.navigation.NavigationBarView
+import com.google.firebase.auth.FirebaseAuth
 
 class CreateGoalActivity : AppCompatActivity() {
     private val db = FirebaseFirestore.getInstance()
@@ -23,6 +24,7 @@ class CreateGoalActivity : AppCompatActivity() {
         val amountEditText = findViewById<EditText>(R.id.amount_edit_text)
         val descriptionEditText = findViewById<EditText>(R.id.description_edit_text)
         val categoryEditText = findViewById<EditText>(R.id.category_edit_text)
+        var firebaseAuth: FirebaseAuth = FirebaseAuth.getInstance()
 
         val createButton = findViewById<Button>(R.id.create_button)
         createButton.setOnClickListener {
@@ -30,9 +32,11 @@ class CreateGoalActivity : AppCompatActivity() {
             val amount = amountEditText.text.toString().toDoubleOrNull() ?: 0.0
             val description = descriptionEditText.text.toString()
             val category = categoryEditText.text.toString()
+            val userId = FirebaseAuth.getInstance().currentUser?.uid
 
             // Create a new goal with the given data
             val goal = hashMapOf(
+                "userId" to userId,
                 "name" to name,
                 "amount" to amount,
                 "description" to description,

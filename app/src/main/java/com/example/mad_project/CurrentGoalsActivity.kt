@@ -10,6 +10,7 @@ import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.ListView
 import com.google.android.material.navigation.NavigationBarView
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 
 class CurrentGoalsActivity : AppCompatActivity() {
@@ -24,8 +25,13 @@ class CurrentGoalsActivity : AppCompatActivity() {
         goalsListView = findViewById(R.id.goals_list_view)
         db = FirebaseFirestore.getInstance()
 
+        //auth
+        val userId = FirebaseAuth.getInstance().currentUser?.uid
+        //auth
+
         // Get all current goals from Firestore
         db.collection("goals")
+            .whereEqualTo("userId", userId)
             .get()
             .addOnSuccessListener { documents ->
                 // Convert each Firestore document to a Goal object
