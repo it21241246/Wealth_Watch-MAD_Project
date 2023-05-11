@@ -58,6 +58,10 @@ class EditGoalActivity : AppCompatActivity() {
             val category = categoryEditText.text.toString()
             val userId = FirebaseAuth.getInstance().currentUser?.uid ?: ""
 
+            if (name.isEmpty() || amount == null || savedAmount == null || description.isEmpty() || category.isEmpty()) {
+                Toast.makeText(this, "Please fill in all the fields to update!", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
 
 
             db.collection("goals")

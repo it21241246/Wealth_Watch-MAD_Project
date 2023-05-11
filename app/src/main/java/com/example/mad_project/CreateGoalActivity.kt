@@ -29,10 +29,15 @@ class CreateGoalActivity : AppCompatActivity() {
         val createButton = findViewById<Button>(R.id.create_button)
         createButton.setOnClickListener {
             val name = nameEditText.text.toString()
-            val amount = amountEditText.text.toString().toDoubleOrNull() ?: 0.0
+            val amount = amountEditText.text.toString().toDoubleOrNull()
             val description = descriptionEditText.text.toString()
             val category = categoryEditText.text.toString()
             val userId = FirebaseAuth.getInstance().currentUser?.uid
+
+            if (name.isEmpty() || amount == null || description.isEmpty() || category.isEmpty()) {
+                Toast.makeText(this, "Please fill in all fields!", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
 
             // Create a new goal with the given data
             val goal = hashMapOf(
