@@ -11,8 +11,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:srcCompat="@drawable/new_edit"
-        tools:layout_editor_absoluteX="-2dp"
-        tools:layout_editor_absoluteY="0dp" />
+        android:scaleType="centerCrop"
+        tools:layout_editor_absoluteX="-1dp"
+        tools:layout_editor_absoluteY="-16dp" />
 
     <EditText
         android:id="@+id/edit_goal_name_edit_text"
