@@ -30,11 +30,11 @@ class DisplayIncome : AppCompatActivity() {
 
         val userId = FirebaseAuth.getInstance().currentUser?.uid
         if (userId != null) {
-            loadExpenses(userId)
+            loadIncome(userId)
         }
     }
 
-    private fun loadExpenses(userId: String) {
+    private fun loadIncome(userId: String) {
         FirebaseFirestore.getInstance()
             .collection("incomes")
             .whereEqualTo("userid", userId)
