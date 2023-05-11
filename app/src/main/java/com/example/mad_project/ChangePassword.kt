@@ -74,6 +74,9 @@ class ChangePassword : AppCompatActivity() {
                                                     Toast.LENGTH_SHORT
                                                 ).show()
                                                 auth.signOut()
+                                                startActivity(
+                                                    android.content.Intent(this, Login::class.java)
+                                                )
                                             }
                                             .addOnFailureListener {
                                                 Toast.makeText(
@@ -82,6 +85,9 @@ class ChangePassword : AppCompatActivity() {
                                                     Toast.LENGTH_SHORT
                                                 ).show()
                                             }
+
+
+
                                     }else{
                                         if (authTask.exception is FirebaseAuthInvalidCredentialsException){
                                             Toast.makeText(this, "Invalid previous password", Toast.LENGTH_SHORT).show()
@@ -95,39 +101,39 @@ class ChangePassword : AppCompatActivity() {
             }
 
         }
-//        val nav: NavigationBarView = findViewById(R.id.navbar)
-//
-//        nav.setOnItemSelectedListener(object : NavigationBarView.OnItemSelectedListener {
-//
-//            override fun onNavigationItemSelected(item: MenuItem): Boolean {
-//
-//                when (item.itemId) {
-//
-//                    R.id.home -> {
-//                        val intent = Intent(this@ChangePassword, MainActivity::class.java)
-//                        startActivity(intent)
-//                    }
-//
-//                    R.id.goals -> {
-//                        val intent = Intent(this@ChangePassword, HomePageActivity::class.java)
-//                        startActivity(intent)
-//                    }
-//
-//                    R.id.stats -> {
-//                        val intent = Intent(this@ChangePassword, ViewPage::class.java)
-//                        startActivity(intent)
-//                    }
-//
-//                    R.id.settings -> {
-//                        val intent = Intent(this@ChangePassword, profile::class.java)
-//                        startActivity(intent)
-//                    }
-//
-//                }
-//
-//                return true
-//            }
-//        })
+        val nav: NavigationBarView = findViewById(R.id.navbar)
+
+        nav.setOnItemSelectedListener(object : NavigationBarView.OnItemSelectedListener {
+
+            override fun onNavigationItemSelected(item: MenuItem): Boolean {
+
+                when (item.itemId) {
+
+                    R.id.home -> {
+                        val intent = Intent(this@ChangePassword, MainActivity::class.java)
+                        startActivity(intent)
+                    }
+
+                    R.id.goals -> {
+                        val intent = Intent(this@ChangePassword, HomePageActivity::class.java)
+                        startActivity(intent)
+                    }
+
+                    R.id.stats -> {
+                        val intent = Intent(this@ChangePassword, ViewPage::class.java)
+                        startActivity(intent)
+                    }
+
+                    R.id.settings -> {
+                        val intent = Intent(this@ChangePassword, profile::class.java)
+                        startActivity(intent)
+                    }
+
+                }
+
+                return true
+            }
+        })
 
     }
 
