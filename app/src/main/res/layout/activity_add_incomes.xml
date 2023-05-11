@@ -17,6 +17,7 @@
         android:textSize="40dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.738"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.111" />
@@ -101,29 +102,31 @@
         android:id="@+id/saveIncomeButton"
         android:layout_width="259dp"
         android:layout_height="53dp"
-        android:backgroundTint="#0583F2"
+        android:textColor="@color/white"
         android:fontFamily="@font/poppins_medium"
         android:text="@string/save_income"
+        android:backgroundTint="#0583F2"
         android:textStyle="bold"
         app:cornerRadius="70dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.849" />
+        app:layout_constraintVertical_bias="0.831" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:layout_width="403dp"
-        android:layout_height="55dp"
         android:id="@+id/navbar"
+        android:layout_width="423dp"
+        android:layout_height="69dp"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="0dp"
+        app:itemIconTint="@drawable/sssss"
+        app:itemTextColor="@drawable/sssss"
+        android:background="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:menu="@menu/menu"
-        app:itemTextColor="@drawable/sssss"
-        app:itemIconTint="@drawable/sssss"
         tools:ignore="MissingConstraints">
 
 

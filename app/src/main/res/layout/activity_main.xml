@@ -17,6 +17,7 @@
         android:fontFamily="@font/poppins_medium"
         android:gravity="center"
         android:text="@string/add_expenses_dashboard"
+        android:textColor="@color/white"
         android:textSize="18dp"
         android:textStyle="bold"
         app:cornerRadius="70dp"
@@ -38,6 +39,7 @@
         android:fontFamily="@font/poppins_medium"
         android:gravity="center"
         android:text="@string/add_income_dashboard"
+        android:textColor="@color/white"
         android:textSize="18dp"
         android:textStyle="bold"
         app:cornerRadius="70dp"
@@ -51,17 +53,18 @@
 
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:layout_width="403dp"
-        android:layout_height="55dp"
         android:id="@+id/navbar"
+        android:layout_width="413dp"
+        android:layout_height="65dp"
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="4dp"
+        android:background="@color/white"
+        app:itemIconTint="@drawable/sssss"
+        app:itemTextColor="@drawable/sssss"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:menu="@menu/menu"
-        app:itemTextColor="@drawable/sssss"
-        app:itemIconTint="@drawable/sssss"
         tools:ignore="MissingConstraints">
 
 
