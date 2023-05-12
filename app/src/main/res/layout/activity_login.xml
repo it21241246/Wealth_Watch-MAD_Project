@@ -46,6 +46,7 @@
             style="@style/LoginTextInputInnerFieldStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textColor="@color/black"
             android:fontFamily="@font/poppins_medium"
             android:hint="Type your Email"
             android:inputType="textEmailAddress" />

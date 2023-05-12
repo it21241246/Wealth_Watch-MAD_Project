@@ -44,6 +44,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Type your Name"
+            android:textColor="@color/black"
             android:fontFamily="@font/poppins_medium"
             android:inputType="text" />
     </com.google.android.material.textfield.TextInputLayout>
@@ -68,6 +69,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Type your Phone"
+            android:textColor="@color/black"
             android:fontFamily="@font/poppins_medium"
             android:inputType="phone" />
     </com.google.android.material.textfield.TextInputLayout>
@@ -118,6 +120,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Type Your Password"
+            android:textColor="@color/black"
             android:fontFamily="@font/poppins_medium"
             android:inputType="textPassword" />
     </com.google.android.material.textfield.TextInputLayout>
@@ -143,6 +146,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Retype Your Password"
+            android:textColor="@color/black"
             android:fontFamily="@font/poppins_medium"
             android:inputType="textPassword" />
     </com.google.android.material.textfield.TextInputLayout>
